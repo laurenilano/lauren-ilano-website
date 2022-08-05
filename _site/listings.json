@@ -15,5 +15,9 @@
       "/posts/creating-sample-db/index.html",
       "/posts/welcome/index.html"
     ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": []
   }
 ]

@@ -17,7 +17,6 @@ editor_options:
 ## Download the odbc package
 ```{r}
 install.packages("odbc")
-library(odbc)
 ```
 
 # Connect
