@@ -1,38 +1,24 @@
 [
   {
+    "objectID": "resource folder/higher-ed-resources/index.html",
+    "href": "resource folder/higher-ed-resources/index.html",
+    "title": "Higher Ed specific resources",
+    "section": "",
+    "text": "links and other blogs"
+  },
+  {
+    "objectID": "resource folder/getting-started/index.html",
+    "href": "resource folder/getting-started/index.html",
+    "title": "Getting Started with R",
+    "section": "",
+    "text": "Books\n\n\nTutorials"
+  },
+  {
     "objectID": "posts/set-up/index.html",
     "href": "posts/set-up/index.html",
     "title": "Getting Started with R",
     "section": "",
     "text": "1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/connecting-to-odbc/index.html",
-    "href": "posts/connecting-to-odbc/index.html",
-    "title": "This is a dummy blog posts",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n\nThis is inline code plus a small code chunk.\n\nlibrary(tidyverse)\nggplot(mpg) +\n  geom_jitter(aes(cty, hwy), size = 4, alpha = 0.5)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Rtips4IR",
-    "section": "",
-    "text": "This blog contains tips and tutorials for institutional researchers who want to incorporate R into their workflow."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "R4IR",
-    "section": "",
-    "text": "SQL\n\n\n\n\nHow to set up an analysis workflow using sql and r\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSQL\n\n\n\n\nThis post goes over how to connect to an SQL database in R using the odbc package\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nset-up\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nLauren Ilano\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSQL\n\n\nset-up\n\n\n\n\nHere we set up SQLite Studio to view a sample database\n\n\n\n\n\n\nAug 4, 2022\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/creating-sample-db/index.html",
@@ -70,31 +56,45 @@
     "text": "Explore dataset\n\nhead"
   },
   {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/connecting-to-odbc/index.html",
+    "href": "posts/connecting-to-odbc/index.html",
+    "title": "This is a dummy blog posts",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n\nThis is inline code plus a small code chunk.\n\nlibrary(tidyverse)\nggplot(mpg) +\n  geom_jitter(aes(cty, hwy), size = 4, alpha = 0.5)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Rtips4IR",
+    "section": "",
+    "text": "This blog contains tips and tutorials for institutional researchers who want to incorporate R into their workflow."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi! My name is Lauren\nI’m an institutional researcher\nI got my PhD in Higher Education from UCLA."
+  },
+  {
     "objectID": "resources.html",
     "href": "resources.html",
     "title": "R Resources",
     "section": "",
-    "text": "Resources\n\n\n\n\nR Resources and Tutorials related to Higher Education\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\n\nResources and Tutorials for Getting Started with R\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Resources\n\n\n\nR Resources and Tutorials related to Higher Education\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\nResources and Tutorials for Getting Started with R\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "resource folder/resources.html",
-    "href": "resource folder/resources.html",
-    "title": "Lauren Ilano's blog",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "R4IR",
     "section": "",
-    "text": "Datacamp\nLink 2\nLink 3\nLinks"
-  },
-  {
-    "objectID": "resource folder/higher-ed-resources/index.html",
-    "href": "resource folder/higher-ed-resources/index.html",
-    "title": "Higher Education specific resources",
-    "section": "",
-    "text": "links and other blogs"
-  },
-  {
-    "objectID": "resource folder/getting-started/index.html",
-    "href": "resource folder/getting-started/index.html",
-    "title": "Getting Started with R",
-    "section": "",
-    "text": "Books\n\n\nTutorials"
+    "text": "SQL\n\n\n\n\nHow to set up an analysis workflow using sql and r\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSQL\n\n\n\n\nThis post goes over how to connect to an SQL database in R using the odbc package\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nset-up\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nLauren Ilano\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSQL\n\n\nset-up\n\n\n\n\nHere we set up SQLite Studio to view a sample database\n\n\n\n\n\n\nAug 4, 2022\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   }
 ]

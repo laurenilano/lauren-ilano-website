@@ -65,9 +65,9 @@ ul.task-list{list-style: none;}
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -104,6 +104,9 @@ ul.task-list{list-style: none;}
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./blog.html">Blog</a>
   </li>  
@@ -158,65 +161,61 @@ ul.task-list{list-style: none;}
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Resources" data-listing-date-sort="1660114800000" data-listing-file-modified-sort="1659669969190" data-listing-reading-time-sort="0.025">
-<div class="body">
-<a href="./resource folder/higher-ed-resources/index.html">
-<h3 class="no-anchor listing-title">
-Higher Education specific resources
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Resources" data-listing-date-sort="1660114800000" data-listing-file-modified-sort="1659712179206" data-listing-reading-time-sort="0.025">
+<a href="./resource folder/higher-ed-resources/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Higher Ed specific resources
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Resources'); return false;">
 Resources
 </div>
 </div>
-<a href="./resource folder/higher-ed-resources/index.html">
-<div class="listing-description">
-<p>R Resources and Tutorials related to Higher Education</p>
+<div class="card-text listing-description">
+R Resources and Tutorials related to Higher Education
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
 </div>
-<div class="metadata">
-<a href="./resource folder/higher-ed-resources/index.html">
 <div class="listing-date">
 Aug 10, 2022
 </div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Resources" data-listing-date-sort="1660114800000" data-listing-file-modified-sort="1659669991038" data-listing-reading-time-sort="0.175">
-<div class="body">
-<a href="./resource folder/getting-started/index.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="1" data-categories="Resources" data-listing-date-sort="1660114800000" data-listing-file-modified-sort="1659712179206" data-listing-reading-time-sort="0.175">
+<a href="./resource folder/getting-started/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Getting Started with R
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Resources'); return false;">
 Resources
 </div>
 </div>
-<a href="./resource folder/getting-started/index.html">
-<div class="listing-description">
-<p>Resources and Tutorials for Getting Started with R</p>
+<div class="card-text listing-description">
+Resources and Tutorials for Getting Started with R
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
 </div>
-<div class="metadata">
-<a href="./resource folder/getting-started/index.html">
 <div class="listing-date">
 Aug 10, 2022
 </div>
-</a>
 </div>
+</div>
+</div>
+</a>
 </div>
 </div>
 <div class="listing-no-matching d-none">
@@ -321,6 +320,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Made with <a href="https://quarto.org/">Quarto</a></div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Contact Me
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:laurenilano@gmail.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

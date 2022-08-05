@@ -6,7 +6,8 @@ website:
   description: "this blog has useful tips about R"
   page-footer: 
     left: "Made with [Quarto](https://quarto.org/)"
-    right: "Contact Me"
+    right: 
+      - text: "Contact Me"
       - icon: envelope
         href: mailto:laurenilano@gmail.com
   navbar:
@@ -22,7 +23,7 @@ website:
         href: https://twitter.com
 format:
   html:
-    theme: journal
+    theme: quartz
     css: styles.css
 
 
