@@ -4,8 +4,14 @@ project:
 website:
   title: "Lauren Ilano's blog"
   description: "this blog has useful tips about R"
+  page-footer: 
+    left: "Made by with [Quarto](https://quarto.org/)"
+    right: 
+      - icon: envelope
+        href: mailto:laurenilano@gmail.com
   navbar:
     right:
+      - about.qmd
       - text: Blog
         href: blog.qmd
       - text: Resources
@@ -16,7 +22,7 @@ website:
         href: https://twitter.com
 format:
   html:
-    theme: cosmo
+    theme: journal
     css: styles.css
 
 
