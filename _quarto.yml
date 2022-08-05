@@ -5,8 +5,8 @@ website:
   title: "Lauren Ilano's blog"
   description: "this blog has useful tips about R"
   page-footer: 
-    left: "Made by with [Quarto](https://quarto.org/)"
-    right: 
+    left: "Made with [Quarto](https://quarto.org/)"
+    right: "Contact Me"
       - icon: envelope
         href: mailto:laurenilano@gmail.com
   navbar:

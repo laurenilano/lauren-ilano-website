@@ -1,5 +1,5 @@
 ---
-title: "Lauren Ilano"
+title: "About Me"
 comments: false
 image: profile.jpeg
 about:
