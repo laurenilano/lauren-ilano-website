@@ -1,0 +1,26 @@
+---
+title: "Lauren Ilano"
+comments: false
+image: profile.jpeg
+about:
+  template: trestles
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:laurenilano@gmail.com
+---
+
+
+</center>
+
+::: {#hero-heading}
+Hi!
+My name is Lauren
+
+I'm an institutional researcher
+
+
+I got my PhD in Higher Education from UCLA. 
+
+
+:::
