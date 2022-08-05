@@ -1,5 +1,5 @@
 ---
-title: 'Connecting to a SQL Database from R'
+title: 'Connecting to a SQL Database from R with odbc'
 date: '2022-08-10'
 categories: ['SQL']
 description: 'This post goes over how to connect to an SQL database in R using the odbc package'
