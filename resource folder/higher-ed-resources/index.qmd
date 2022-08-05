@@ -1,0 +1,15 @@
+---
+title: 'Higher Ed specific resources'
+date: '2022-08-10'
+categories: ['Resources']
+description: 'R Resources and Tutorials related to Higher Education'
+execute: 
+  message: false
+  warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+# books
+
+# links and other blogs

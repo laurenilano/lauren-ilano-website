@@ -1,0 +1,23 @@
+---
+title: 'Connecting to a SQL Database from R'
+date: '2022-08-10'
+categories: ['SQL']
+description: 'This post goes over how to connect to an SQL database in R using the odbc package'
+execute: 
+  message: false
+  warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+# Why Connect to a DB in R?
+
+# The odbc Package
+
+## Download the odbc package
+```{r}
+install.packages("odbc")
+library(odbc)
+```
+
+# Connect

@@ -1,0 +1,14 @@
+{
+  "hash": "0937a69b4c7951025fea76b2aaa612d2",
+  "result": {
+    "markdown": "---\ntitle: 'SQL/R Workflow'\ndate: '2022-08-10'\ncategories: ['SQL']\ndescription: 'How to set up an analysis workflow using sql and r'\nexecute: \n  message: false\n  warning: false\neditor_options: \n  chunk_output_type: console\n---\n\n\n# Intro\n\nWhile you could embed all your SQL queries into your .R scripts, it can get a bit messy. Instead, a better approach is to write out your SQL queries in SQLite Studio (or whatever GUI you prefer) and pulling in only the resulting table in R. \n\nThis has a few advantages. First, you are able to troubleshoot in the SQL Studio environment and make sure all the pesky variable names are correctly spelled 0:)\n\nSecondly, it helps modularize your code so if you decide you need to change a filter because now you want to exclude all dual enrolled students, you dont have to scroll to line 863 of your R script but can just open the .sql file and make the change there. \n\n# Code Folder\n- Code\n  \\- 01.Get_SQL.sql\n  \\- 02.Analysis.R\n  \n  \n# Example Query \nset up the example\nshow basic query that is saved as 01.GetSQL.sql script\n\n# How to set up R Script\n\n## Remember to connect to SQLite Database\n  - link to other post\n  \n## Ingest Query\n\n::: {.cell}\n\n:::\n\n\n## Explore dataset\n- head\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

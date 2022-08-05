@@ -1,0 +1,13 @@
+---
+title: "R Resources"
+listing:
+  contents: resource folder
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
+

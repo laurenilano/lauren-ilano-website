@@ -1,0 +1,19 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/sql-r-workflow/index.html",
+      "/posts/connecting-to-odbc/index.html",
+      "/posts/set-up/index.html",
+      "/posts/creating-sample-db/index.html",
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/resources.html",
+    "items": [
+      "/resource folder/higher-ed-resources/index.html",
+      "/resource folder/getting-started/index.html"
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+---
+title: "Getting Started with R"
+author: "Lauren Ilano"
+date: "2022-08-04"
+categories: [set-up]
+image: "image.jpg"
+---
+
+This is a post with executable code.
+
+```{r}
+1 + 1
+```
