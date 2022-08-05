@@ -12,7 +12,8 @@ website:
         href: mailto:laurenilano@gmail.com
   navbar:
     right:
-      - about.qmd
+      - text: About Me
+        href: about.qmd
       - text: Blog
         href: blog.qmd
       - text: Resources
