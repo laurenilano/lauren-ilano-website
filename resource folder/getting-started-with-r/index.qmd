@@ -10,18 +10,5 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Tips for getting started
-I taught myself R using datacamp. Something you hear a lot is that you need to have practice problems. 
-
-Following along with books
-
-Not knowing what you don't know
-
-Reviewing others' code
-
-Coding challengings like advent4code
-
-# Books
-
-# Tutorials
+# Coming Soon
 

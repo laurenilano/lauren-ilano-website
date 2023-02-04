@@ -10,6 +10,4 @@ editor_options:
   chunk_output_type: console
 ---
 
-# books
-
-# links and other blogs
+# Coming Soon
