@@ -1,13 +1,17 @@
 ---
-title: "Getting Started with R"
+title: "Hello, world!"
 author: "Lauren Ilano"
-date: "2022-08-04"
-categories: [set-up]
+date: "2023-02-03"
+categories: [introduction]
 image: "image.jpg"
 ---
 
-This is a post with executable code.
+This is my second try at having a blog! 
 
-```{r}
-1 + 1
-```
+I was motivated to do this because I want to, you know, get out there. 
+
+Also, I have been using a lot of markdown lately and figured I could just copy and paste stuff from my Obsidian notes into this blog pretty easily. I also recently came across the idea of "learning in public" and really liked it. 
+
+It appealed to me because I love to learn and often find myself on the absorb side of the absorb/expunge binary. Its a spectrum I'm sure, but I have relegated myself to an extreme pole...
+
+Anyways, I am always learning and often feel too ashamed to say or post something unless its perfect and I am coming to realize that if I wait that long, the world will end! So hello, world! Here is me learning. 

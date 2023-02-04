@@ -1,6 +1,14 @@
 ---
-title: "Rtips4IR"
+title: "Lauren Ilano"
 image: profile.jpeg
+listing:
+  - id: posts
+    contents: posts
+    type: grid
+    max-items: 3
+    sort: 
+      - "date desc"
+      - "title asc"
 about:
   template: jolla
   links:
@@ -13,8 +21,15 @@ about:
 
 ---
 
-# R Tips for Institutional Researchers
+# Howdy!
 
-This blog contains tips and tutorials for institutional researchers who want to incorporate R into their workflow.
+I am a higher education researcher by day (but preferably night) and a lifelong student. I love to read, hate to write, but enjoy torturing myself so here is a blog! I'm about 20 years late to the party which pretty much tells you everything you need to know about me. Oh, and I love cats because of course I do. 
 
+
+## Recent blog posts
+
+
+<a href="blog.qmd"> <button type="button" class="btn btn-primary float-end btn-sm">See all</button></a>
+
+<br>
 

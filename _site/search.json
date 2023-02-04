@@ -4,28 +4,28 @@
     "href": "resource folder/higher-ed-resources/index.html",
     "title": "Higher Ed specific resources",
     "section": "",
-    "text": "links and other blogs"
+    "text": "books\n\n\nlinks and other blogs"
   },
   {
     "objectID": "resource folder/getting-started/index.html",
     "href": "resource folder/getting-started/index.html",
     "title": "Getting Started with R",
     "section": "",
-    "text": "Books\n\n\nTutorials"
+    "text": "Tips for getting started\nI taught myself R using datacamp. Something you hear a lot is that you need to have practice problems.\nFollowing along with books\nNot knowing what you don’t know\nReviewing others’ code\nCoding challengings like advent4code\n\n\nBooks\n\n\nTutorials"
   },
   {
     "objectID": "posts/set-up/index.html",
     "href": "posts/set-up/index.html",
-    "title": "Getting Started with R",
+    "title": "Hello, world!",
     "section": "",
-    "text": "1 + 1\n\n[1] 2"
+    "text": "This is my second try at having a blog!\nI was motivated to do this because I want to, you know, get out there.\nAlso, I have been using a lot of markdown lately and figured I could just copy and paste stuff from my Obsidian notes into this blog pretty easily. I also recently came across the idea of “learning in public” and really liked it.\nIt appealed to me because I love to learn and often find myself on the absorb side of the absorb/expunge binary. Its a spectrum I’m sure, but I have relegated myself to an extreme pole…\nAnyways, I am always learning and often feel too ashamed to say or post something unless its perfect and I am coming to realize that if I wait that long, the world will end! So hello, world! Here is me learning."
   },
   {
     "objectID": "posts/creating-sample-db/index.html",
     "href": "posts/creating-sample-db/index.html",
     "title": "Creating a Sample SQLite DB to Play With",
     "section": "",
-    "text": "The bigger picture\nThis blog post is the beginning of a series of posts that will hopefully help folks see how to host and query a database locally (using SQLiteStudio) and eventually connect to the database from R using the odbc package. To show the basic steps to set up and connect to a db, we will be using a simple toy database, chinook, that is widely available. My hope in the future is to create a toy IR database that is more similar to the types of queries we would run as IR professionals (i.e., fake student enrollment data, course/section data, term data, etc.)\n\n\nWhat is SQLite\n\n\nSetting Up SQLite and SQLiteStudio\n\n\nImporting the Chinook Database\n\n\nExploring the Database"
+    "text": "SQL, Databases, and R\nPrior to working in IR, I had tried my best to learn SQL through online tutorials, but it was always difficult to grasp how I would use SQL on a daily basis because I never learned anything beyond the syntax. I knew how to write a select statement, but I couldn’t necessarily imagine how and where I would type these statements in the real world.\n\n\nThe bigger picture\nThis blog post is the beginning of a series of posts that will hopefully help folks see how to host and query a database locally (using SQLiteStudio) and eventually connect to the database from R using the odbc package. To show the basic steps to set up and connect to a db, we will be using a simple toy database, chinook, that is widely available. My hope in the future is to create a toy IR database that is more similar to the types of queries we would run as IR professionals (i.e., fake student enrollment data, course/section data, term data, etc.)\n\n\nWhat is SQLite\n\n\nSetting Up SQLite and SQLiteStudio\n\n\nImporting the Chinook Database\n\n\nExploring the Database"
   },
   {
     "objectID": "posts/sql-r-workflow/index.html",
@@ -60,7 +60,7 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
   {
     "objectID": "posts/connecting-to-odbc/index.html",
@@ -72,30 +72,30 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Rtips4IR",
+    "title": "Lauren Ilano",
     "section": "",
-    "text": "This blog contains tips and tutorials for institutional researchers who want to incorporate R into their workflow."
+    "text": "I am a higher education researcher by day (but preferably night) and a lifelong student. I love to read, hate to write, but enjoy torturing myself so here is a blog! I’m about 20 years late to the party which pretty much tells you everything you need to know about me. Oh, and I love cats because of course I do.\n\n\n See all"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Lauren Ilano",
     "section": "",
-    "text": "Hi! My name is Lauren\nI’m an institutional researcher\nI got my PhD in Higher Education from UCLA."
+    "text": "Hi!\nMy name is Lauren.\nWork\n\nCurrent: CSU Chancellor’s Office\nFormer: IVC, UCLA\nI also do consulting work\n\nEducation\n\nCurrent: Calbright College\nPhD/MA: Higher Education at UCLA\nBA: Psychology and Gender Studies at UC Davis"
   },
   {
     "objectID": "resources.html",
     "href": "resources.html",
-    "title": "R Resources",
+    "title": "Resources",
     "section": "",
-    "text": "Resources\n\n\n\nR Resources and Tutorials related to Higher Education\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\nResources\n\n\n\nResources and Tutorials for Getting Started with R\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Getting Started with R\n\n\n\nResources\n\n\n\nResources and Tutorials for Getting Started with R\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n\nHigher Ed specific resources\n\n\n\nResources\n\n\n\nR Resources and Tutorials related to Higher Education\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "R4IR",
+    "title": "Blog",
     "section": "",
-    "text": "SQL\n\n\n\n\nHow to set up an analysis workflow using sql and r\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSQL\n\n\n\n\nThis post goes over how to connect to an SQL database in R using the odbc package\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nset-up\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\nLauren Ilano\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSQL\n\n\nset-up\n\n\n\n\nHere we set up SQLite Studio to view a sample database\n\n\n\n\n\n\nAug 4, 2022\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nAug 1, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSQL/R Workflow\n\n\n\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConnecting to a SQL Database from R with odbc\n\n\n\n\n\n\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreating a Sample SQLite DB to Play With\n\n\n\n\n\n\n\n\n\nAug 4, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects.html",
@@ -103,5 +103,26 @@
     "title": "Projects",
     "section": "",
     "text": "No matching items"
+  },
+  {
+    "objectID": "posts/connecting-to-odbc/index.html#download-the-odbc-package",
+    "href": "posts/connecting-to-odbc/index.html#download-the-odbc-package",
+    "title": "Connecting to a SQL Database from R with odbc",
+    "section": "Download the odbc package",
+    "text": "Download the odbc package\n\ninstall.packages(\"odbc\")\n\n\nThe downloaded binary packages are in\n    /var/folders/6n/9j3qxl3s11b1rwr8z3n739pr0000gn/T//RtmpWG5VgW/downloaded_packages"
+  },
+  {
+    "objectID": "resource folder/getting-started-with-r/index.html",
+    "href": "resource folder/getting-started-with-r/index.html",
+    "title": "Getting Started with R",
+    "section": "",
+    "text": "Tips for getting started\nI taught myself R using datacamp. Something you hear a lot is that you need to have practice problems.\nFollowing along with books\nNot knowing what you don’t know\nReviewing others’ code\nCoding challengings like advent4code\n\n\nBooks\n\n\nTutorials"
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nConnecting to a SQL Database from R with odbc\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n \n\n\n\nSQL/R Workflow\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n \n\n\n\nCreating a Sample SQLite DB to Play With\n\n\n\nAug 4, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting Started with R\n\n\n\nAug 4, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nAug 1, 2022\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

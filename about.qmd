@@ -14,13 +14,24 @@ about:
 </center>
 
 ::: {#hero-heading}
+
 Hi!
-My name is Lauren
 
-I'm an institutional researcher
+My name is Lauren.
+
+**Work**
+
+  + Current: CSU Chancellor's Office
+  + Former: IVC, UCLA
+  + I also do consulting work 
+  
+**Education**
+
+  +  Current: Calbright College
+  +  PhD/MA: Higher Education at UCLA
+  +  BA: Psychology and Gender Studies at UC Davis
 
 
-I got my PhD in Higher Education from UCLA. 
 
 
 :::

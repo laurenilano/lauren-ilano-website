@@ -2,8 +2,8 @@ project:
   type: website
 
 website:
-  title: "Lauren Ilano's blog"
-  description: "this blog has useful tips about R"
+  title: "Lauren Ilano"
+  description: ""
   page-footer: 
     left: "Made with [Quarto](https://quarto.org/)"
     right: 
@@ -20,6 +20,8 @@ website:
         href: resources.qmd
       - text: Projects
         href: projects.qmd
+      - text: CV
+        href: 'Ilano 2022 CV.pdf'
       - icon: github
         href: https://github.com/laurenilano
       - icon: twitter
