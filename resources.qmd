@@ -2,6 +2,7 @@
 title: "Helpful Resources"
 subtitle: "Just some books, sites, blogs, and rpackages that I've found helpful."
 toc: true
+toc-location: left
 title-block-banner: true
 ---
 
