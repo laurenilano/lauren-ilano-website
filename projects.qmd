@@ -3,7 +3,7 @@ title: "Projects"
 listing:
   contents: projects folder
   sort: "date desc"
-  type: grid
+  type: default
   categories: false
   sort-ui: false
   filter-ui: false

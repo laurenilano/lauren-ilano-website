@@ -1,0 +1,25 @@
+---
+title: 'Faculty Diversity'
+date: '2023-02-04'
+categories: ['Projects']
+description: ''
+image: edtrustlogo.png
+execute: 
+  message: false
+  warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+![](edtrustlogo.png)
+
+As a consultant for EdTrust, I contributed to a report which examined faculty diversity relative to student diversity, as well as hiring equity, tenure equity, and changes in faculty representation over time for Black and Latino faculty. Using publicly-available IPEDS data, we developed four metrics to assess faculty diversity at public, four-year universities. 
+
+The findings were not surprising. University faculty don't reflect the demographics of their students and at more than half the universities in the sample, when faculty of color are hired they are are not on the tenure track. Mere representational diversity of faculty will not fix white supremacy in academia, especially when faculty of color are are subject to hostile climates^[Griffin, K. 2019. Institutional barriers, strategies, and benefits to increasing the representation of Women and Men of Color in the professoriate. *Higher Education: The handbook of theory and research.* https://link.springer.com/referenceworkentry/10.1007/978-3-030-11743-6_4-1], presumed incompetence^[Gutierrez y Muhs, G., Niemann, Y.F., Gonzalez, C., Harris, A., 2012. Presumed incompetent: The intersections of race and class for women in academia. University Press of Colorado. https://upcolorado.com/utah-state-university-press/item/2338-presumed-incompetent], and structural racism. It's necessary, but woefully insufficient.    
+
+
+[See the full Faculty Diversity Report here](https://edtrust.org/resource/faculty-diversity-and-student-success-go-hand-in-hand-so-why-are-university-faculties-so-white/)
+
+![](report-cover.png){width=200}
+
+
