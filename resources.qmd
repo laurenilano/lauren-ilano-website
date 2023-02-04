@@ -1,13 +1,36 @@
 ---
-title: "Resources"
-listing:
-  contents: resource folder
-  sort: "date desc"
-  type: grid
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
+title: "Helpful Resources"
+toc: true
 title-block-banner: true
 ---
+
+This is just a listing of books, sites, blogs, and rpackages that I've found helpful. 
+
+## `r fontawesome::fa("book-open", fill = "#64605F", a11y = "sem")` free learning stuff
+
+[Posit Primers](https://posit.cloud/learn/primers)
+
+  + Really great set of tutorials for those who are new to R/RStudio.
+  
+[R for Data Science](https://r4ds.had.co.nz/), by Hadley Wickham
+
+  + A classic.
+
+[Happy Git and GitHub for the useR](https://happygitwithr.com/), by Jenny Bryan
+
+  + Excellent and straightforward book on how (and why!) to use version control. Especially useful for folks who use the RStudio IDE. 
+  
+[Datacamp](https://app.datacamp.com/learn/courses/free-introduction-to-r)
+
+  + There are some serious issues with this company... However, I found its courses to be really helpful because you can code-along. I believe the intro to R course is free.
+  
+[Notes from a Data Witch](https://blog.djnavarro.net/), Danielle Navarro's Blog
+
+  + I am a Danielle Navarro fan girl and read her blog religiously. 
+  
+[Free CompTIA Certification Exams](https://www.calbright.org/)
+
+  + I like to learn, but did you know you can get free vouchers to take CompTIA certification exams? In particular, at Calbright College (for CA residents) after completing IT coursework, you get a voucher to take the CompTIA A+ exams. I've also taken courses at Irvine Valley College (another community college) and got my Linux+ Certification (although the course itself was not free--unlike Calbright). If you are interested in getting IT certs, check out your local community college to see if you can get a voucher for the cert exam. 
+  
+
 
