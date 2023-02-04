@@ -18,6 +18,9 @@ about:
     - icon: github
       text: Github
       href: https://github.com/laurenilano
+    - icon: book
+      text: Goodreads
+      href: https://www.goodreads.com/user/show/68223454-lauren-m-ilano
 
 ---
 

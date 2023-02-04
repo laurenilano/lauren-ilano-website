@@ -24,8 +24,8 @@ website:
         href: 'Ilano 2022 CV.pdf'
       - icon: github
         href: https://github.com/laurenilano
-      - icon: twitter
-        href: https://twitter.com
+      - icon: book
+        href: https://www.goodreads.com/user/show/68223454-lauren-m-ilano
 format:
   html:
     theme: flatly
