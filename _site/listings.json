@@ -9,10 +9,7 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/set-up/index.html",
-      "/posts/sql-r-workflow/index.html",
-      "/posts/connecting-to-odbc/index.html",
-      "/posts/creating-sample-db/index.html"
+      "/posts/set-up/index.html"
     ]
   },
   {
@@ -32,10 +29,7 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/set-up/index.html",
-      "/posts/connecting-to-odbc/index.html",
-      "/posts/sql-r-workflow/index.html",
-      "/posts/creating-sample-db/index.html"
+      "/posts/set-up/index.html"
     ]
   }
 ]
