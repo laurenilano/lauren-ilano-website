@@ -88,7 +88,7 @@
     "href": "resources.html",
     "title": "Helpful Resources",
     "section": "",
-    "text": "This is just a listing of books, sites, blogs, and rpackages that I’ve found helpful."
+    "text": "Posit Primers\n\nReally great set of tutorials for those who are new to R/RStudio.\n\nR for Data Science, by Hadley Wickham\n\nA classic.\n\nHappy Git and GitHub for the useR, by Jenny Bryan\n\nExcellent and straightforward book on how (and why!) to use version control. Especially useful for folks who use the RStudio IDE.\n\nDatacamp\n\nThere are some serious issues with this company… However, I found its courses to be really helpful because you can code-along. I believe the intro to R course is free.\n\nNotes from a Data Witch, Danielle Navarro’s Blog\n\nI am a Danielle Navarro fan girl and read her blog religiously.\n\nFree CompTIA Certification Exams\n\nI like to learn, but did you know you can get free vouchers to take CompTIA certification exams? In particular, at Calbright College (for CA residents) after completing IT coursework, you get a voucher to take the CompTIA A+ exams. I’ve also taken courses at Irvine Valley College (another community college) and got my Linux+ Certification (although the course itself was not free–unlike Calbright). If you are interested in getting IT certs, check out your local community college to see if you can get a voucher for the cert exam."
   },
   {
     "objectID": "blog.html",
@@ -102,7 +102,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Faculty Diversity\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "(Lack of) Faculty Diversity\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/connecting-to-odbc/index.html#download-the-odbc-package",
@@ -128,7 +128,7 @@
   {
     "objectID": "projects folder/Faculty Diversity/index.html",
     "href": "projects folder/Faculty Diversity/index.html",
-    "title": "Faculty Diversity",
+    "title": "(Lack of) Faculty Diversity",
     "section": "",
     "text": "As a consultant for EdTrust, I contributed to a report which examined faculty diversity relative to student diversity, as well as hiring equity, tenure equity, and changes in faculty representation over time for Black and Latino faculty. Using publicly-available IPEDS data, we developed four metrics to assess faculty diversity at public, four-year universities.\nThe findings were not surprising. University faculty don’t reflect the demographics of their students and at more than half the universities in the sample, when faculty of color are hired they are are not on the tenure track. Mere representational diversity of faculty will not fix white supremacy in academia, especially when faculty of color are are subject to hostile climates1, presumed incompetence2, and structural racism. It’s necessary, but woefully insufficient.\nSee the full Faculty Diversity Report here\n\n\n\n\n\nFootnotes\n\n\nGriffin, K. 2019. Institutional barriers, strategies, and benefits to increasing the representation of Women and Men of Color in the professoriate. Higher Education: The handbook of theory and research. https://link.springer.com/referenceworkentry/10.1007/978-3-030-11743-6_4-1↩︎\nGutierrez y Muhs, G., Niemann, Y.F., Gonzalez, C., Harris, A., 2012. Presumed incompetent: The intersections of race and class for women in academia. University Press of Colorado. https://upcolorado.com/utah-state-university-press/item/2338-presumed-incompetent↩︎"
   },

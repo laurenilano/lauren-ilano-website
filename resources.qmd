@@ -1,10 +1,9 @@
 ---
 title: "Helpful Resources"
+subtitle: "Just some books, sites, blogs, and rpackages that I've found helpful."
 toc: true
 title-block-banner: true
 ---
-
-This is just a listing of books, sites, blogs, and rpackages that I've found helpful. 
 
 ## `r fontawesome::fa("book-open", fill = "#64605F", a11y = "sem")` free learning stuff
 
