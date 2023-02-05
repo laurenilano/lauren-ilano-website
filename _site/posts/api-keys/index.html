@@ -183,6 +183,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Saving API Keys to an .Renviron file</h1>
+            <p class="subtitle lead">Whatever you do, don’t hardcode secret keys…</p>
                       </div>
   </div>
     
@@ -203,10 +204,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#creating-.renviron" id="toc-creating-.renviron" class="nav-link" data-scroll-target="#creating-.renviron">Creating .Renviron</a></li>
+  <li><a href="#creating-the-.renviron-file" id="toc-creating-the-.renviron-file" class="nav-link" data-scroll-target="#creating-the-.renviron-file">Creating the .Renviron file</a></li>
   <li><a href="#setting-environment-variables" id="toc-setting-environment-variables" class="nav-link" data-scroll-target="#setting-environment-variables">Setting environment variables</a>
   <ul class="collapse">
-  <li><a href="#digression-1-getting-a-scorecard-api-key" id="toc-digression-1-getting-a-scorecard-api-key" class="nav-link" data-scroll-target="#digression-1-getting-a-scorecard-api-key">Digression #1: Getting a Scorecard API Key</a></li>
+  <li><a href="#getting-a-college-scorecard-api-key" id="toc-getting-a-college-scorecard-api-key" class="nav-link" data-scroll-target="#getting-a-college-scorecard-api-key">Getting a College Scorecard API Key</a></li>
   <li><a href="#downloading-scorecard-data" id="toc-downloading-scorecard-data" class="nav-link" data-scroll-target="#downloading-scorecard-data">Downloading Scorecard Data</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
@@ -227,6 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Sometimes you have information that you want R to be able to access, without having to type it in every time. We do this all the time in a session when we create variables that hold a piece of information like a threshold value. But, sometimes you have variables that you want to set to access during all your sessions which is where the .Renviron file comes in. Setting environment variables in .Renviron is a convenient way to make the information available to all R sessions without having to type them in every time. These environment variables can be used to store various information such as the path to a data directory, API keys, and other important information that you don’t want to hardcode in your R scripts.</p>
 <p>When I was working on my dissertation, I never thought twice about hardcoding API keys because all the code was for my eyes only. (Unfortunately, that also introduced a whole host of issues related to clarity and just basic organization, but that is for another day.)</p>
 <p>After leaving academia and working in more collaborative environments, I really had to be more disciplined in my coding by becoming more careful about keeping my API keys and passwords private. I think in general, its just good practice to avoid hardcoding passwords–I mean, it seems pretty obvious to me now–but it never really came up in the courses I took.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><img src="mario-key.png" class="img-fluid"></p>
 <p>In this blog, I’ll walk you through creating the .Renviron file and how to use it to store an API Key. In particular, we will create and store an API Key for the <a href="https://collegescorecard.ed.gov/data/documentation/">College Scorecard</a> dataset. You can manually download College Scorecard data, but we can also connect to the API and get data directly into R using the <code>rscorecard</code> package <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> developed by Ben Skinner.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -246,9 +248,9 @@ Back-up…what is an API?
 </div>
 </div>
 </section>
-<section id="creating-.renviron" class="level1">
-<h1>Creating .Renviron</h1>
-<p>.Renviron file is not created by default, so you are going to have to do some work to create it yourself. Luckily, it’s pretty darn easy.</p>
+<section id="creating-the-.renviron-file" class="level1">
+<h1>Creating the .Renviron file</h1>
+<p>The .Renviron file is not created by default, so you are going to have to do some work to create it yourself. Luckily, it’s pretty darn easy.</p>
 <p>You can create a file in a text editor like Notepad and save it as “.Renviron” or you can use the <code>edit_r_environ()</code> function from the <code>usethis</code> package. Both methods will do the exact same thing. If you are going to create the file using a text editor, you just have to make sure to save the file in the correct location.</p>
 <p>The location of the .Renviron file depends on the operating system you are using:</p>
 <ul>
@@ -268,8 +270,8 @@ Back-up…what is an API?
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>API_KEY<span class="ot">=</span>your_api_key</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="digression-1-getting-a-scorecard-api-key" class="level2">
-<h2 class="anchored" data-anchor-id="digression-1-getting-a-scorecard-api-key">Digression #1: Getting a Scorecard API Key</h2>
+<section id="getting-a-college-scorecard-api-key" class="level2">
+<h2 class="anchored" data-anchor-id="getting-a-college-scorecard-api-key">Getting a College Scorecard API Key</h2>
 <p>Ok, so in order to set up our API key, we need to get one! If we go to the <a href="https://collegescorecard.ed.gov/data/documentation/">College Scorecard documentation site</a> we can sign up for an API key using the form at the bottom of the page. After confirming we are not a bot, we just have to fill out our name and email address. In a few minutes, we will receive an email with our 40-character API key. <img src="scorecard-get-api.png" class="img-fluid"></p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">

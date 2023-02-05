@@ -1,10 +1,12 @@
 ---
 title: "Saving API Keys to an .Renviron file"
-subtitle: ""
+subtitle: "Whatever you do, don't hardcode secret keys..."
 toc: true
 toc-location: left
+image: mario-key.png
 title-block-banner: true
 ---
+
 
 # Introduction
 
@@ -13,6 +15,8 @@ Sometimes you have information that you want R to be able to access, without hav
 When I was working on my dissertation, I never thought twice about hardcoding API keys because all the code was for my eyes only. (Unfortunately, that also introduced a whole host of issues related to clarity and just basic organization, but that is for another day.)
 
 After leaving academia and working in more collaborative environments, I really had to be more disciplined in my coding by becoming more careful about keeping my API keys and passwords private. I think in general, its just good practice to avoid hardcoding passwords--I mean, it seems pretty obvious to me now--but it never really came up in the courses I took.^[Jim Hester and Jenny Bryan have a great book that teaches how to create dot files and other important, but often overlooked things called *What they forgot to teach you about R*. The book also has the best domain ever: [https://rstats.wtf/](https://rstats.wtf/)]  
+
+![](mario-key.png)
 
 In this blog, I'll walk you through creating the .Renviron file and how to use it to store an API Key. In particular, we will create and store an API Key for the [College Scorecard](https://collegescorecard.ed.gov/data/documentation/) dataset. You can manually download College Scorecard data, but we can also connect to the API and get data directly into R using the `rscorecard` package ^[You can access the full package documentation [here](https://www.btskinner.io/rscorecard/)] developed by Ben Skinner. 
 
