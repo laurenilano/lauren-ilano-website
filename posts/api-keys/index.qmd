@@ -52,7 +52,7 @@ For our purposes, we want to set up an API key so we would do so using the follo
 API_KEY=your_api_key
 ```
 
-## Digression #1: Getting a Scorecard API Key
+## Getting a College Scorecard API Key
 
 Ok, so in order to set up our API key, we need to get one! If we go to the [College Scorecard documentation site](https://collegescorecard.ed.gov/data/documentation/) we can sign up for an API key using the form at the bottom of the page. After confirming we are not a bot, we just have to fill out our name and email address. In a few minutes, we will receive an email with our 40-character API key. 
 ![](scorecard-get-api)
