@@ -9,6 +9,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/api-keys/index.html",
       "/posts/set-up/index.html"
     ]
   },
@@ -31,6 +32,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/api-keys/index.html",
       "/posts/set-up/index.html"
     ]
   }
