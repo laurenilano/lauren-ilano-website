@@ -21,7 +21,7 @@ website:
       - text: Projects
         href: projects.qmd
       - text: CV
-        href: 'Ilano 2022 CV.pdf'
+        href: 'Ilano 2023 CV.pdf'
       - icon: github
         href: https://github.com/laurenilano
       - icon: book
