@@ -3,6 +3,7 @@ title: "Quirks when pasting in duckdb"
 subtitle: "Where the duck did the NAs go?!?!"
 author: "Lauren Ilano"
 date: "2023-03-24"
+categories: [duckdb]
 toc: false
 image: ducktales.jpeg
 title-block-banner: true
