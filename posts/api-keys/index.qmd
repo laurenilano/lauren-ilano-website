@@ -1,6 +1,9 @@
 ---
 title: "Saving API Keys to an .Renviron file"
 subtitle: "Whatever you do, don't hardcode secret keys..."
+author: "Lauren Ilano"
+date: "2023-03-04"
+categories: [r-setup]
 toc: true
 toc-location: left
 image: mario-key.png
