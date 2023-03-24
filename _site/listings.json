@@ -9,6 +9,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/duck-db-paste/index.html",
       "/posts/api-keys/index.html",
       "/posts/set-up/index.html"
     ]
@@ -32,6 +33,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/duck-db-paste/index.html",
       "/posts/api-keys/index.html",
       "/posts/set-up/index.html"
     ]

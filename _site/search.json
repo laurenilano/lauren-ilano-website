@@ -95,7 +95,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects.html",
@@ -166,5 +166,19 @@
     "title": "Saving API Keys to an .Renviron file",
     "section": "Getting a College Scorecard API Key",
     "text": "Getting a College Scorecard API Key\nOk, so in order to set up our API key, we need to get one! If we go to the College Scorecard documentation site we can sign up for an API key using the form at the bottom of the page. After confirming we are not a bot, we just have to fill out our name and email address. In a few minutes, we will receive an email with our 40-character API key. \n\n\n\n\n\n\nWhy do I need this pesky key??\n\n\n\n\n\nThey want to know who to come after (or ban) if you violate their terms. Don’t share your key because someone could do bad things and get you in trouble.\n\n\n\nNow that we have our API key, all we need to do is type the following into our .Renviron file:\n\nGOV_API_KEY=\"{your_40_digit_key}\"\n\nNow that we’ve set up our key, let’s try to use it. # Using environment variables in R\nOnce you have set the environment variables in .Renviron, you can use them in R by using the Sys.getenv() function.\n\n\n\n\n\n\nImportant\n\n\n\nMake sure to restart your R session after saving your .Renviron file!\n\n\nWe can test to make sure our environment variable is accessible to us by running the Sys.getenv() function. If we set up our environment variable correctly, we should see our 40-digit key in the console output after running this code:\n\nSys.getenv(GOV_API_KEY)\n\n[1] \"\""
+  },
+  {
+    "objectID": "posts/duck-db-paste/index.html",
+    "href": "posts/duck-db-paste/index.html",
+    "title": "Quirks when pasting in duckdb",
+    "section": "",
+    "text": "At my workplace, we do not have the luxury of having reliable student IDs for each record so that means we often use frankenstein keys to join data across sources. When I was going through this arduous process1 trying to join student information back to a National Student Clearinghouse data I discovered a quirk in duckdb() with the paste function. Our frankenstein keys have student information that is sometimes missing so we would expect an NA to appear in our key string.\nLet’s take a simplified example. Our key could have the student’s application ID, their birthday, and matriculation term all separated by a period. We would expect our key to look something like this:\n123456789.20000101.20184\nIf the birthday was missing for some reason, our key would be:\n123456789.NA.20184\nIn order to match across sources, the NA string is really important! But, when I was passing my parquet files from arrow to duckdb and using paste, I kept getting this:\n123456789.20184"
+  },
+  {
+    "objectID": "posts/duck-db-paste/index.html#i-cant-create-my-ugly-frankenstein-keys-using-duckdb-because-my-precious-na-strings-go-missing",
+    "href": "posts/duck-db-paste/index.html#i-cant-create-my-ugly-frankenstein-keys-using-duckdb-because-my-precious-na-strings-go-missing",
+    "title": "Quirks when pasting in duckdb",
+    "section": "I can’t create my ugly frankenstein keys using duckdb because my precious NA strings go missing!",
+    "text": "I can’t create my ugly frankenstein keys using duckdb because my precious NA strings go missing!\nAt my workplace, we do not have the luxury of having reliable student IDs for each record so that means we often use frankenstein keys to join data across sources. When I was going through this arduous process1 trying to join student information back to a National Student Clearinghouse data I discovered a quirk in duckdb() with the paste function. Our frankenstein keys have student information that is sometimes missing so we would expect an NA to appear in our key string.\nLet’s take a simplified example. Our key could have the student’s application ID, their birthday, and matriculation term all separated by a period. We would expect our key to look something like this:\n123456789.20000101.20184\nIf the birthday was missing for some reason, our key would be:\n123456789.NA.20184\nIn order to match across sources, the NA string is really important! But, when I was passing my parquet files from arrow to duckdb and using paste, I kept getting this:\n123456789.20184"
   }
 ]

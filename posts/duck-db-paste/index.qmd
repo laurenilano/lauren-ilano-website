@@ -1,0 +1,58 @@
+---
+title: "Quirks when pasting in duckdb"
+subtitle: "Where the duck did the NAs go?!?!"
+toc: false
+image: ducktales.jpeg
+title-block-banner: true
+---
+
+![](ducktales.jpeg)
+
+# The Issue: 
+## I can't create my ugly frankenstein keys using duckdb because my precious NA strings go missing!
+
+At my workplace, we do not have the luxury of having reliable student IDs for each record so that means we often use frankenstein keys to join data across sources. When I was going through this arduous process^[I am being dramatic because it really isn't *that* bad] trying to join student information back to a National Student Clearinghouse data I discovered a quirk in `duckdb()` with the `paste` function. Our frankenstein keys have student information that is sometimes missing so we would expect an NA to appear in our key string.
+
+Let's take a simplified example. Our key could have the student's application ID, their birthday, and matriculation term all separated by a period. We would expect our key to look something like this:
+
+123456789.20000101.20184
+
+If the birthday was missing for some reason, our key would be:
+
+123456789.NA.20184
+
+In order to match across sources, the NA string is really important! But, when I was passing my parquet files from arrow to duckdb and using paste, I kept getting this:
+
+123456789.20184
+
+
+# Dude, where's my NA string?!!!
+
+Now, this is probably clearly stated in the documentation but uh, I did not read that. Instead I banged my head on the keyboard and kept running the same lines of code (and restarted my R session) for an embarrassingly long time hoping for a different result.
+
+My code looked something like this (there was more there and I needed to pass to duckdb to do things arrow can't do yet):
+
+
+```{r}
+#| eval: FALSE
+
+my_parquet_file |>
+to_duckdb() |>
+mutate(franken_key = paste(applicant_ID, birthdate, matriculation_term, sep = ".")) |>
+collect()
+```
+
+# The (not-so) obvious solution
+All I had to do was move the `collect()` function up (see below) and then the `paste()` function worked as expected so I could have my precious NA strings. This is all very obvious now, however I figured I would record this so I can commit this to memory and not have to deal with this again.
+
+```{r}
+#| eval: FALSE
+
+my_parquet_file |>
+to_duckdb() |>
+collect() |>
+mutate(franken_key = paste(applicant_ID, birthdate, matriculation_term, sep = "."))
+```
+
+
+
