@@ -6,7 +6,9 @@ toc-location: left
 title-block-banner: true
 ---
 
-## `r fontawesome::fa("book-open", fill = "#64605F", a11y = "sem")` free learning stuff
+## free learning stuff
+
+
 
 [Posit Primers](https://posit.cloud/learn/primers)
 

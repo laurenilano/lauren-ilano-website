@@ -20,8 +20,6 @@ website:
         href: resources.qmd
       - text: Projects
         href: projects.qmd
-      - text: Clients
-        href: clients.qmd
       - text: CV
         href: 'Ilano 2023 CV.pdf'
       - icon: github
