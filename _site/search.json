@@ -1,17 +1,17 @@
 [
   {
+    "objectID": "resource folder/getting-started-with-r/index.html",
+    "href": "resource folder/getting-started-with-r/index.html",
+    "title": "Getting Started with R",
+    "section": "",
+    "text": "Coming Soon"
+  },
+  {
     "objectID": "resource folder/higher-ed-resources/index.html",
     "href": "resource folder/higher-ed-resources/index.html",
     "title": "Higher Ed specific resources",
     "section": "",
     "text": "Coming Soon"
-  },
-  {
-    "objectID": "resource folder/getting-started/index.html",
-    "href": "resource folder/getting-started/index.html",
-    "title": "Getting Started with R",
-    "section": "",
-    "text": "Tips for getting started\nI taught myself R using datacamp. Something you hear a lot is that you need to have practice problems.\nFollowing along with books\nNot knowing what you don’t know\nReviewing others’ code\nCoding challengings like advent4code\n\n\nBooks\n\n\nTutorials"
   },
   {
     "objectID": "posts/set-up/index.html",
@@ -21,53 +21,67 @@
     "text": "This is my second try at having a blog!\nI was motivated to do this because I want to, you know, get out there.\nAlso, I have been using a lot of markdown lately and figured I could just copy and paste stuff from my Obsidian notes into this blog pretty easily. I also recently came across the idea of “learning in public” and really liked it.\nIt appealed to me because I love to learn and often find myself on the absorb side of the absorb/expunge binary. Its a spectrum I’m sure, but I have relegated myself to an extreme pole…\nAnyways, I am always learning and often feel too ashamed to say or post something unless its perfect and I am coming to realize that if I wait that long, the world will end! So hello, world! Here is me learning."
   },
   {
-    "objectID": "posts/creating-sample-db/index.html",
-    "href": "posts/creating-sample-db/index.html",
-    "title": "Creating a Sample SQLite DB to Play With",
+    "objectID": "posts/duck-db-paste/index.html#i-cant-create-my-ugly-frankenstein-keys-using-duckdb-because-my-precious-na-strings-go-missing",
+    "href": "posts/duck-db-paste/index.html#i-cant-create-my-ugly-frankenstein-keys-using-duckdb-because-my-precious-na-strings-go-missing",
+    "title": "Quirks when pasting in duckdb",
+    "section": "I can’t create my ugly frankenstein keys using duckdb because my precious NA strings go missing!",
+    "text": "I can’t create my ugly frankenstein keys using duckdb because my precious NA strings go missing!\nAt my workplace, we do not have the luxury of having reliable student IDs for each record so that means we often use frankenstein keys to join data across sources. When I was going through this arduous process1 trying to join student information back to a National Student Clearinghouse data I discovered a quirk in duckdb() with the paste function. Our frankenstein keys have student information that is sometimes missing so we would expect an NA to appear in our key string.\nLet’s take a simplified example. Our key could have the student’s application ID, their birthday, and matriculation term all separated by a period. We would expect our key to look something like this:\n123456789.20000101.20184\nIf the birthday was missing for some reason, our key would be:\n123456789.NA.20184\nIn order to match across sources, the NA string is really important! But, when I was passing my parquet files from arrow to duckdb and using paste, I kept getting this:\n123456789.20184"
+  },
+  {
+    "objectID": "posts/duck-db-paste/index.html#footnotes",
+    "href": "posts/duck-db-paste/index.html#footnotes",
+    "title": "Quirks when pasting in duckdb",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nI am being dramatic because it really isn’t that bad↩︎"
+  },
+  {
+    "objectID": "posts/api-keys/index.html",
+    "href": "posts/api-keys/index.html",
+    "title": "Saving API Keys to an .Renviron file",
     "section": "",
-    "text": "SQL, Databases, and R\nPrior to working in IR, I had tried my best to learn SQL through online tutorials, but it was always difficult to grasp how I would use SQL on a daily basis because I never learned anything beyond the syntax. I knew how to write a select statement, but I couldn’t necessarily imagine how and where I would type these statements in the real world.\n\n\nThe bigger picture\nThis blog post is the beginning of a series of posts that will hopefully help folks see how to host and query a database locally (using SQLiteStudio) and eventually connect to the database from R using the odbc package. To show the basic steps to set up and connect to a db, we will be using a simple toy database, chinook, that is widely available. My hope in the future is to create a toy IR database that is more similar to the types of queries we would run as IR professionals (i.e., fake student enrollment data, course/section data, term data, etc.)\n\n\nWhat is SQLite\n\n\nSetting Up SQLite and SQLiteStudio\n\n\nImporting the Chinook Database\n\n\nExploring the Database"
+    "text": "Sometimes you have information that you want R to be able to access, without having to type it in every time. We do this all the time in a session when we create variables that hold a piece of information like a threshold value. But, sometimes you have variables that you want to set to access during all your sessions which is where the .Renviron file comes in. Setting environment variables in .Renviron is a convenient way to make the information available to all R sessions without having to type them in every time. These environment variables can be used to store various information such as the path to a data directory, API keys, and other important information that you don’t want to hardcode in your R scripts.\nWhen I was working on my dissertation, I never thought twice about hardcoding API keys because all the code was for my eyes only. (Unfortunately, that also introduced a whole host of issues related to clarity and just basic organization, but that is for another day.)\nAfter leaving academia and working in more collaborative environments, I really had to be more disciplined in my coding by becoming more careful about keeping my API keys and passwords private. I think in general, its just good practice to avoid hardcoding passwords–I mean, it seems pretty obvious to me now–but it never really came up in the courses I took.1\n\nIn this blog, I’ll walk you through creating the .Renviron file and how to use it to store an API Key. In particular, we will create and store an API Key for the College Scorecard dataset. You can manually download College Scorecard data, but we can also connect to the API and get data directly into R using the rscorecard package 2 developed by Ben Skinner.\n\n\n\n\n\n\nBack-up…what is an API?\n\n\n\n\n\nAPI stands for Application Programming Interface and it essentially allows you to connect to the data elements that underlie a particular website. Zapier has a really good Introduction to APIs tutorial here.\nThe College Scorecard site was designed to be a useful tool for students to compare different institutions and there is a user interface that allows you to filter based on many different characteristics like cost, graduation rate, geographic location, etc. The interface is nice and all, but we can use the API to access the underlying data if we want to analyze it on our own."
   },
   {
-    "objectID": "posts/sql-r-workflow/index.html",
-    "href": "posts/sql-r-workflow/index.html",
-    "title": "SQL/R Workflow",
+    "objectID": "posts/api-keys/index.html#getting-a-college-scorecard-api-key",
+    "href": "posts/api-keys/index.html#getting-a-college-scorecard-api-key",
+    "title": "Saving API Keys to an .Renviron file",
+    "section": "Getting a College Scorecard API Key",
+    "text": "Getting a College Scorecard API Key\nOk, so in order to set up our API key, we need to get one! If we go to the College Scorecard documentation site we can sign up for an API key using the form at the bottom of the page. After confirming we are not a bot, we just have to fill out our name and email address. In a few minutes, we will receive an email with our 40-character API key. \n\n\n\n\n\n\nWhy do I need this pesky key??\n\n\n\n\n\nThey want to know who to come after (or ban) if you violate their terms. Don’t share your key because someone could do bad things and get you in trouble.\n\n\n\nNow that we have our API key, all we need to do is type the following into our .Renviron file:\n\nGOV_API_KEY=\"{your_40_digit_key}\"\n\nNow that we’ve set up our key, let’s try to use it. # Using environment variables in R\nOnce you have set the environment variables in .Renviron, you can use them in R by using the Sys.getenv() function.\n\n\n\n\n\n\nImportant\n\n\n\nMake sure to restart your R session after saving your .Renviron file!\n\n\nWe can test to make sure our environment variable is accessible to us by running the Sys.getenv() function. If we set up our environment variable correctly, we should see our 40-digit key in the console output after running this code:\n\nSys.getenv(GOV_API_KEY)\n\n[1] \"\""
+  },
+  {
+    "objectID": "posts/api-keys/index.html#downloading-scorecard-data",
+    "href": "posts/api-keys/index.html#downloading-scorecard-data",
+    "title": "Saving API Keys to an .Renviron file",
+    "section": "Downloading Scorecard Data",
+    "text": "Downloading Scorecard Data\nThe rscorecard package is a great API wrapper in the R language that allows us to make API calls in the comfort of R. I encourage you to check out the package documentation for more information on all the package features.\nThe first thing you need to do when using the package is registering your API key in your R environment. The package has a function sc_key() that you use to set your API key, but in the documentation they suggest hardcoding your API key, which we are trying to avoid.\n\n# Example from rscorecard documentation:\n\n## use your real key in place of the Xs\nsc_key('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')\n\nLet’s try it by referencing the variable in our .Renviron file to demonstrate how our method allows for the same functionality without having to hardcode our API key in our script. Following the documentation, run the sc_key() function with to register our API key using the variable we set in .Renviron.\n\nlibrary(rscorecard)\nsc_key(Sys.getenv(\"GOV_API_KEY\"))\n\nDATAGOV_API_KEY environment variable now set. You may now use sc_get() without specifying a key.\n\n\nNow that we’ve set up our key, let’s request some data. Let’s get a list of HBCUs by state.\n\nsc_init() %&gt;%\n  sc_filter(hbcu==1) %&gt;%\n  sc_select(unitid, instnm, stabbr, hbcu) %&gt;%\n  sc_year('latest') %&gt;%\n  sc_get() %&gt;%\n  head()\n\nLarge request will require: 1 additional pulls.\n\n\nRequest additional chunk 1\n\n\nRequest complete!\n\n\n# A tibble: 6 × 5\n  unitid instnm                                            stabbr  hbcu year  \n   &lt;int&gt; &lt;chr&gt;                                             &lt;chr&gt;  &lt;int&gt; &lt;chr&gt; \n1 100654 Alabama A & M University                          AL         1 latest\n2 100724 Alabama State University                          AL         1 latest\n3 101240 Gadsden State Community College                   AL         1 latest\n4 101462 J. F. Drake State Community and Technical College AL         1 latest\n5 101569 Lawson State Community College                    AL         1 latest\n6 101675 Miles College                                     AL         1 latest\n\n\nGreat! It seems to work and we didn’t have to hardcode our API key. Now we can freely share the code with collaborators without having to worry that our private key will be compromised. And better yet, if they have their .Renviron variable set up, they can run the code and it will just work."
+  },
+  {
+    "objectID": "posts/api-keys/index.html#footnotes",
+    "href": "posts/api-keys/index.html#footnotes",
+    "title": "Saving API Keys to an .Renviron file",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nJim Hester and Jenny Bryan have a great book that teaches how to create dot files and other important, but often overlooked things called What they forgot to teach you about R. The book also has the best domain ever: https://rstats.wtf/↩︎\nYou can access the full package documentation here↩︎"
+  },
+  {
+    "objectID": "projects folder/Faculty Diversity/index.html",
+    "href": "projects folder/Faculty Diversity/index.html",
+    "title": "(Lack of) Faculty Diversity",
     "section": "",
-    "text": "While you could embed all your SQL queries into your .R scripts, it can get a bit messy. Instead, a better approach is to write out your SQL queries in SQLite Studio (or whatever GUI you prefer) and pulling in only the resulting table in R.\nThis has a few advantages. First, you are able to troubleshoot in the SQL Studio environment and make sure all the pesky variable names are correctly spelled 0:)\nSecondly, it helps modularize your code so if you decide you need to change a filter because now you want to exclude all dual enrolled students, you dont have to scroll to line 863 of your R script but can just open the .sql file and make the change there."
+    "text": "As a consultant for EdTrust, I contributed to a report which examined faculty diversity relative to student diversity, as well as hiring equity, tenure equity, and changes in faculty representation over time for Black and Latino faculty. Using publicly-available IPEDS data, we developed four metrics to assess faculty diversity at public, four-year universities.\nThe findings were not surprising. University faculty don’t reflect the demographics of their students and at more than half the universities in the sample, when faculty of color are hired they are are not on the tenure track. Mere representational diversity of faculty will not fix white supremacy in academia, especially when faculty of color are are subject to hostile climates1, presumed incompetence2, and structural racism. It’s necessary, but woefully insufficient.\nSee the full Faculty Diversity Report here"
   },
   {
-    "objectID": "posts/sql-r-workflow/index.html#remember-to-connect-to-sqlite-database",
-    "href": "posts/sql-r-workflow/index.html#remember-to-connect-to-sqlite-database",
-    "title": "SQL/R Workflow",
-    "section": "Remember to connect to SQLite Database",
-    "text": "Remember to connect to SQLite Database\n\nlink to other post"
+    "objectID": "projects folder/Faculty Diversity/index.html#footnotes",
+    "href": "projects folder/Faculty Diversity/index.html#footnotes",
+    "title": "(Lack of) Faculty Diversity",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nGriffin, K. 2019. Institutional barriers, strategies, and benefits to increasing the representation of Women and Men of Color in the professoriate. Higher Education: The handbook of theory and research. https://link.springer.com/referenceworkentry/10.1007/978-3-030-11743-6_4-1↩︎\nGutierrez y Muhs, G., Niemann, Y.F., Gonzalez, C., Harris, A., 2012. Presumed incompetent: The intersections of race and class for women in academia. University Press of Colorado. https://upcolorado.com/utah-state-university-press/item/2338-presumed-incompetent↩︎"
   },
   {
-    "objectID": "posts/sql-r-workflow/index.html#ingest-query",
-    "href": "posts/sql-r-workflow/index.html#ingest-query",
-    "title": "SQL/R Workflow",
-    "section": "Ingest Query",
-    "text": "Ingest Query"
-  },
-  {
-    "objectID": "posts/sql-r-workflow/index.html#explore-dataset",
-    "href": "posts/sql-r-workflow/index.html#explore-dataset",
-    "title": "SQL/R Workflow",
-    "section": "Explore dataset",
-    "text": "Explore dataset\n\nhead"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/connecting-to-odbc/index.html",
-    "href": "posts/connecting-to-odbc/index.html",
-    "title": "This is a dummy blog posts",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit est nec dui eleifend, at dictum elit ullamcorper. Aliquam feugiat dictum bibendum. Praesent fermentum laoreet quam, cursus volutpat odio dapibus in. Fusce luctus porttitor vehicula. Donec ac tortor nisi. Donec at lectus tortor. Morbi tempor, nibh non euismod viverra, metus arcu aliquet elit, sed fringilla urna leo vel purus.\n\n\nThis is inline code plus a small code chunk.\n\nlibrary(tidyverse)\nggplot(mpg) +\n  geom_jitter(aes(cty, hwy), size = 4, alpha = 0.5)"
+    "text": "(Lack of) Faculty Diversity\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -77,6 +91,13 @@
     "text": "I am a higher education researcher by day (but preferably night) and a lifelong student. I love to read, hate to write, but enjoy torturing myself so here is a blog! I’m about 20 years late to the party which pretty much tells you everything you need to know about me. Oh, and I love cats because of course I do.\n\n\n See all"
   },
   {
+    "objectID": "index.html#recent-blog-posts",
+    "href": "index.html#recent-blog-posts",
+    "title": "Lauren Ilano",
+    "section": "",
+    "text": "See all"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Lauren Ilano",
@@ -84,8 +105,22 @@
     "text": "Hi!\nMy name is Lauren.\nWork\n\nCurrently: CSU Chancellor’s Office\nFormerly: Irvine Valley College, UCLA AAP\nConsulting: The Education Trust, The RP Group, RDP Consulting\n\nEducation\n\nCurrent: Calbright College\nPhD/MA: Higher Education at UCLA\nBA: Psychology and Gender Studies at UC Davis"
   },
   {
+    "objectID": "clients.html",
+    "href": "clients.html",
+    "title": "Client Login",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
     "objectID": "resources.html",
     "href": "resources.html",
+    "title": "Helpful Resources",
+    "section": "",
+    "text": "Posit Primers\n\nReally great set of tutorials for those who are new to R/RStudio.\n\nR for Data Science, by Hadley Wickham\n\nA classic.\n\nHappy Git and GitHub for the useR, by Jenny Bryan\n\nExcellent and straightforward book on how (and why!) to use version control. Especially useful for folks who use the RStudio IDE.\n\nDatacamp\n\nThere are some serious issues with this company… However, I found its courses to be really helpful because you can code-along. I believe the intro to R course is free.\n\nNotes from a Data Witch, Danielle Navarro’s Blog\n\nI am a Danielle Navarro fan girl and read her blog religiously.\n\nFree CompTIA Certification Exams\n\nI like to learn, but did you know you can get free vouchers to take CompTIA certification exams? In particular, at Calbright College (for CA residents) after completing IT coursework, you get a voucher to take the CompTIA A+ exams. I’ve also taken courses at Irvine Valley College (another community college) and got my Linux+ Certification (although the course itself was not free–unlike Calbright). If you are interested in getting IT certs, check out your local community college to see if you can get a voucher for the cert exam."
+  },
+  {
+    "objectID": "resources.html#r-fontawesomefabook-open-fill-64605f-a11y-sem-free-learning-stuff",
+    "href": "resources.html#r-fontawesomefabook-open-fill-64605f-a11y-sem-free-learning-stuff",
     "title": "Helpful Resources",
     "section": "",
     "text": "Posit Primers\n\nReally great set of tutorials for those who are new to R/RStudio.\n\nR for Data Science, by Hadley Wickham\n\nA classic.\n\nHappy Git and GitHub for the useR, by Jenny Bryan\n\nExcellent and straightforward book on how (and why!) to use version control. Especially useful for folks who use the RStudio IDE.\n\nDatacamp\n\nThere are some serious issues with this company… However, I found its courses to be really helpful because you can code-along. I believe the intro to R course is free.\n\nNotes from a Data Witch, Danielle Navarro’s Blog\n\nI am a Danielle Navarro fan girl and read her blog religiously.\n\nFree CompTIA Certification Exams\n\nI like to learn, but did you know you can get free vouchers to take CompTIA certification exams? In particular, at Calbright College (for CA residents) after completing IT coursework, you get a voucher to take the CompTIA A+ exams. I’ve also taken courses at Irvine Valley College (another community college) and got my Linux+ Certification (although the course itself was not free–unlike Calbright). If you are interested in getting IT certs, check out your local community college to see if you can get a voucher for the cert exam."
@@ -96,89 +131,5 @@
     "title": "Blog",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "(Lack of) Faculty Diversity\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/connecting-to-odbc/index.html#download-the-odbc-package",
-    "href": "posts/connecting-to-odbc/index.html#download-the-odbc-package",
-    "title": "Connecting to a SQL Database from R with odbc",
-    "section": "Download the odbc package",
-    "text": "Download the odbc package\n\ninstall.packages(\"odbc\")\n\n\nThe downloaded binary packages are in\n    /var/folders/6n/9j3qxl3s11b1rwr8z3n739pr0000gn/T//RtmpWG5VgW/downloaded_packages"
-  },
-  {
-    "objectID": "resource folder/getting-started-with-r/index.html",
-    "href": "resource folder/getting-started-with-r/index.html",
-    "title": "Getting Started with R",
-    "section": "",
-    "text": "Coming Soon"
-  },
-  {
-    "objectID": "posts/index.html",
-    "href": "posts/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n \n\n\n\nConnecting to a SQL Database from R with odbc\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n \n\n\n\nSQL/R Workflow\n\n\n\nAug 10, 2022\n\n\n\n\n\n\n\n\n\n\n \n\n\n\nCreating a Sample SQLite DB to Play With\n\n\n\nAug 4, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGetting Started with R\n\n\n\nAug 4, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nAug 1, 2022\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects folder/Faculty Diversity/index.html",
-    "href": "projects folder/Faculty Diversity/index.html",
-    "title": "(Lack of) Faculty Diversity",
-    "section": "",
-    "text": "As a consultant for EdTrust, I contributed to a report which examined faculty diversity relative to student diversity, as well as hiring equity, tenure equity, and changes in faculty representation over time for Black and Latino faculty. Using publicly-available IPEDS data, we developed four metrics to assess faculty diversity at public, four-year universities.\nThe findings were not surprising. University faculty don’t reflect the demographics of their students and at more than half the universities in the sample, when faculty of color are hired they are are not on the tenure track. Mere representational diversity of faculty will not fix white supremacy in academia, especially when faculty of color are are subject to hostile climates1, presumed incompetence2, and structural racism. It’s necessary, but woefully insufficient.\nSee the full Faculty Diversity Report here\n\n\n\n\n\nFootnotes\n\n\nGriffin, K. 2019. Institutional barriers, strategies, and benefits to increasing the representation of Women and Men of Color in the professoriate. Higher Education: The handbook of theory and research. https://link.springer.com/referenceworkentry/10.1007/978-3-030-11743-6_4-1↩︎\nGutierrez y Muhs, G., Niemann, Y.F., Gonzalez, C., Harris, A., 2012. Presumed incompetent: The intersections of race and class for women in academia. University Press of Colorado. https://upcolorado.com/utah-state-university-press/item/2338-presumed-incompetent↩︎"
-  },
-  {
-    "objectID": "resources.html#free-learning-stuff",
-    "href": "resources.html#free-learning-stuff",
-    "title": "Helpful Resources",
-    "section": "Book Open free learning stuff",
-    "text": "Book Open free learning stuff\nPosit Primers\n\nReally great set of tutorials for those who are new to R/RStudio.\n\nR for Data Science, by Hadley Wickham\n\nA classic.\n\nHappy Git and GitHub for the useR, by Jenny Bryan\n\nExcellent and straightforward book on how (and why!) to use version control. Especially useful for folks who use the RStudio IDE.\n\nDatacamp\n\nThere are some serious issues with this company… However, I found its courses to be really helpful because you can code-along. I believe the intro to R course is free.\n\nNotes from a Data Witch, Danielle Navarro’s Blog\n\nI am a Danielle Navarro fan girl and read her blog religiously.\n\nFree CompTIA Certification Exams\n\nI like to learn, but did you know you can get free vouchers to take CompTIA certification exams? In particular, at Calbright College (for CA residents) after completing IT coursework, you get a voucher to take the CompTIA A+ exams. I’ve also taken courses at Irvine Valley College (another community college) and got my Linux+ Certification (although the course itself was not free–unlike Calbright). If you are interested in getting IT certs, check out your local community college to see if you can get a voucher for the cert exam."
-  },
-  {
-    "objectID": "posts/api-keys/index.html",
-    "href": "posts/api-keys/index.html",
-    "title": "Saving API Keys to an .Renviron file",
-    "section": "",
-    "text": "Sometimes you have information that you want R to be able to access, without having to type it in every time. We do this all the time in a session when we create variables that hold a piece of information like a threshold value. But, sometimes you have variables that you want to set to access during all your sessions which is where the .Renviron file comes in. Setting environment variables in .Renviron is a convenient way to make the information available to all R sessions without having to type them in every time. These environment variables can be used to store various information such as the path to a data directory, API keys, and other important information that you don’t want to hardcode in your R scripts.\nWhen I was working on my dissertation, I never thought twice about hardcoding API keys because all the code was for my eyes only. (Unfortunately, that also introduced a whole host of issues related to clarity and just basic organization, but that is for another day.)\nAfter leaving academia and working in more collaborative environments, I really had to be more disciplined in my coding by becoming more careful about keeping my API keys and passwords private. I think in general, its just good practice to avoid hardcoding passwords–I mean, it seems pretty obvious to me now–but it never really came up in the courses I took.1\n\nIn this blog, I’ll walk you through creating the .Renviron file and how to use it to store an API Key. In particular, we will create and store an API Key for the College Scorecard dataset. You can manually download College Scorecard data, but we can also connect to the API and get data directly into R using the rscorecard package 2 developed by Ben Skinner.\n\n\n\n\n\n\nBack-up…what is an API?\n\n\n\n\n\nAPI stands for Application Programming Interface and it essentially allows you to connect to the data elements that underlie a particular website. Zapier has a really good Introduction to APIs tutorial here.\nThe College Scorecard site was designed to be a useful tool for students to compare different institutions and there is a user interface that allows you to filter based on many different characteristics like cost, graduation rate, geographic location, etc. The interface is nice and all, but we can use the API to access the underlying data if we want to analyze it on our own."
-  },
-  {
-    "objectID": "posts/api-keys/index.html#digression-1-getting-a-scorecard-api-key",
-    "href": "posts/api-keys/index.html#digression-1-getting-a-scorecard-api-key",
-    "title": "Saving API Keys to an .Renviron file",
-    "section": "Digression #1: Getting a Scorecard API Key",
-    "text": "Digression #1: Getting a Scorecard API Key\nOk, so in order to set up our API key, we need to get one! If we go to the College Scorecard documentation site we can sign up for an API key using the form at the bottom of the page. After confirming we are not a bot, we just have to fill out our name and email address. In a few minutes, we will receive an email with our 40-character API key. \n\n\n\n\n\n\nWhy do I need this pesky key??\n\n\n\n\n\nThey want to know who to come after (or ban) if you violate their terms. Don’t share your key because someone could do bad things and get you in trouble.\n\n\n\nNow that we have our API key, all we need to do is type the following into our .Renviron file:\n\nGOV_API_KEY=\"{your_40_digit_key}\"\n\nNow that we’ve set up our key, let’s try to use it. # Using environment variables in R\nOnce you have set the environment variables in .Renviron, you can use them in R by using the Sys.getenv() function.\n\n\n\n\n\n\nImportant\n\n\n\nMake sure to restart your R session after saving your .Renviron file!\n\n\nWe can test to make sure our environment variable is accessible to us by running the Sys.getenv() function. If we set up our environment variable correctly, we should see our 40-digit key in the console output after running this code:\n\nSys.getenv(GOV_API_KEY)\n\n[1] \"\""
-  },
-  {
-    "objectID": "posts/api-keys/index.html#downloading-scorecard-data",
-    "href": "posts/api-keys/index.html#downloading-scorecard-data",
-    "title": "Saving API Keys to an .Renviron file",
-    "section": "Downloading Scorecard Data",
-    "text": "Downloading Scorecard Data\nThe rscorecard package is a great API wrapper in the R language that allows us to make API calls in the comfort of R. I encourage you to check out the package documentation for more information on all the package features.\nThe first thing you need to do when using the package is registering your API key in your R environment. The package has a function sc_key() that you use to set your API key, but in the documentation they suggest hardcoding your API key, which we are trying to avoid.\n\n# Example from rscorecard documentation:\n\n## use your real key in place of the Xs\nsc_key('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')\n\nLet’s try it by referencing the variable in our .Renviron file to demonstrate how our method allows for the same functionality without having to hardcode our API key in our script. Following the documentation, run the sc_key() function with to register our API key using the variable we set in .Renviron.\n\nlibrary(rscorecard)\nsc_key(Sys.getenv(\"GOV_API_KEY\"))\n\nDATAGOV_API_KEY environment variable now set. You may now use sc_get() without specifying a key.\n\n\nNow that we’ve set up our key, let’s request some data. Let’s get a list of HBCUs by state.\n\nsc_init() %>%\n  sc_filter(hbcu==1) %>%\n  sc_select(unitid, instnm, stabbr, hbcu) %>%\n  sc_year('latest') %>%\n  sc_get() %>%\n  head()\n\nLarge request will require: 1 additional pulls.\n\n\nRequest additional chunk 1\n\n\nRequest complete!\n\n\n# A tibble: 6 × 5\n  unitid instnm                                            stabbr  hbcu year  \n   <int> <chr>                                             <chr>  <int> <chr> \n1 100654 Alabama A & M University                          AL         1 latest\n2 100724 Alabama State University                          AL         1 latest\n3 101240 Gadsden State Community College                   AL         1 latest\n4 101462 J. F. Drake State Community and Technical College AL         1 latest\n5 101569 Lawson State Community College                    AL         1 latest\n6 101675 Miles College                                     AL         1 latest\n\n\nGreat! It seems to work and we didn’t have to hardcode our API key. Now we can freely share the code with collaborators without having to worry that our private key will be compromised. And better yet, if they have their .Renviron variable set up, they can run the code and it will just work."
-  },
-  {
-    "objectID": "posts/api-keys/index.html#getting-a-college-scorecard-api-key",
-    "href": "posts/api-keys/index.html#getting-a-college-scorecard-api-key",
-    "title": "Saving API Keys to an .Renviron file",
-    "section": "Getting a College Scorecard API Key",
-    "text": "Getting a College Scorecard API Key\nOk, so in order to set up our API key, we need to get one! If we go to the College Scorecard documentation site we can sign up for an API key using the form at the bottom of the page. After confirming we are not a bot, we just have to fill out our name and email address. In a few minutes, we will receive an email with our 40-character API key. \n\n\n\n\n\n\nWhy do I need this pesky key??\n\n\n\n\n\nThey want to know who to come after (or ban) if you violate their terms. Don’t share your key because someone could do bad things and get you in trouble.\n\n\n\nNow that we have our API key, all we need to do is type the following into our .Renviron file:\n\nGOV_API_KEY=\"{your_40_digit_key}\"\n\nNow that we’ve set up our key, let’s try to use it. # Using environment variables in R\nOnce you have set the environment variables in .Renviron, you can use them in R by using the Sys.getenv() function.\n\n\n\n\n\n\nImportant\n\n\n\nMake sure to restart your R session after saving your .Renviron file!\n\n\nWe can test to make sure our environment variable is accessible to us by running the Sys.getenv() function. If we set up our environment variable correctly, we should see our 40-digit key in the console output after running this code:\n\nSys.getenv(GOV_API_KEY)\n\n[1] \"\""
-  },
-  {
-    "objectID": "posts/duck-db-paste/index.html",
-    "href": "posts/duck-db-paste/index.html",
-    "title": "Quirks when pasting in duckdb",
-    "section": "",
-    "text": "At my workplace, we do not have the luxury of having reliable student IDs for each record so that means we often use frankenstein keys to join data across sources. When I was going through this arduous process1 trying to join student information back to a National Student Clearinghouse data I discovered a quirk in duckdb() with the paste function. Our frankenstein keys have student information that is sometimes missing so we would expect an NA to appear in our key string.\nLet’s take a simplified example. Our key could have the student’s application ID, their birthday, and matriculation term all separated by a period. We would expect our key to look something like this:\n123456789.20000101.20184\nIf the birthday was missing for some reason, our key would be:\n123456789.NA.20184\nIn order to match across sources, the NA string is really important! But, when I was passing my parquet files from arrow to duckdb and using paste, I kept getting this:\n123456789.20184"
-  },
-  {
-    "objectID": "posts/duck-db-paste/index.html#i-cant-create-my-ugly-frankenstein-keys-using-duckdb-because-my-precious-na-strings-go-missing",
-    "href": "posts/duck-db-paste/index.html#i-cant-create-my-ugly-frankenstein-keys-using-duckdb-because-my-precious-na-strings-go-missing",
-    "title": "Quirks when pasting in duckdb",
-    "section": "I can’t create my ugly frankenstein keys using duckdb because my precious NA strings go missing!",
-    "text": "I can’t create my ugly frankenstein keys using duckdb because my precious NA strings go missing!\nAt my workplace, we do not have the luxury of having reliable student IDs for each record so that means we often use frankenstein keys to join data across sources. When I was going through this arduous process1 trying to join student information back to a National Student Clearinghouse data I discovered a quirk in duckdb() with the paste function. Our frankenstein keys have student information that is sometimes missing so we would expect an NA to appear in our key string.\nLet’s take a simplified example. Our key could have the student’s application ID, their birthday, and matriculation term all separated by a period. We would expect our key to look something like this:\n123456789.20000101.20184\nIf the birthday was missing for some reason, our key would be:\n123456789.NA.20184\nIn order to match across sources, the NA string is really important! But, when I was passing my parquet files from arrow to duckdb and using paste, I kept getting this:\n123456789.20184"
   }
 ]

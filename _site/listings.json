@@ -1,13 +1,12 @@
 [
   {
-    "listing": "/resources.html",
+    "listing": "/projects.html",
     "items": [
-      "/resource folder/getting-started-with-r/index.html",
-      "/resource folder/higher-ed-resources/index.html"
+      "/projects folder/Faculty Diversity/index.html"
     ]
   },
   {
-    "listing": "/blog.html",
+    "listing": "/index.html",
     "items": [
       "/posts/duck-db-paste/index.html",
       "/posts/api-keys/index.html",
@@ -15,23 +14,11 @@
     ]
   },
   {
-    "listing": "/projects.html",
-    "items": [
-      "/projects folder/Faculty Diversity/index.html"
-    ]
+    "listing": "/clients.html",
+    "items": []
   },
   {
-    "listing": "/posts/index.html",
-    "items": [
-      "/posts/connecting-to-odbc/index.html",
-      "/posts/sql-r-workflow/index.html",
-      "/posts/creating-sample-db/index.html",
-      "/posts/set-up/index.html",
-      "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
       "/posts/duck-db-paste/index.html",
       "/posts/api-keys/index.html",
