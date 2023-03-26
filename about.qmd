@@ -15,7 +15,7 @@ about:
 
 ::: {#hero-heading}
 
-Hi!
+Hi! {{< fa hand-spock >}}
 
 My name is Lauren.
 

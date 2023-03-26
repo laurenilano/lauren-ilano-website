@@ -6,7 +6,7 @@ toc-location: left
 title-block-banner: true
 ---
 
-## free learning stuff
+## {{< fa book-open >}}  free learning stuff
 
 
 
