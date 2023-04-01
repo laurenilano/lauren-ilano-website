@@ -63,6 +63,13 @@
     "text": "Footnotes\n\n\nJim Hester and Jenny Bryan have a great book that teaches how to create dot files and other important, but often overlooked things called What they forgot to teach you about R. The book also has the best domain ever: https://rstats.wtf/↩︎\nYou can access the full package documentation here↩︎"
   },
   {
+    "objectID": "posts/tableau-color-palette/index.html",
+    "href": "posts/tableau-color-palette/index.html",
+    "title": "Adding Color Palettes to Tableau",
+    "section": "",
+    "text": "I’m not the most creative person and visualizations are not my favorite thing to work on (sorry!). With that being said, I’m always on the lookout for easy tricks that make it look like I spent more time on a visualization than I actually did 0:)\n\n\n\nlets_get_creative_dont_hug_me_im_scared.jpeg\n\n\nOne of my favorite things to do is to use custom color palettes because it gives the impression of a more polished product without too much effort. To me, its part of the Pareto principle in action and I’m all for that."
+  },
+  {
     "objectID": "projects folder/Faculty Diversity/index.html",
     "href": "projects folder/Faculty Diversity/index.html",
     "title": "(Lack of) Faculty Diversity",
@@ -130,6 +137,6 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
   }
 ]
