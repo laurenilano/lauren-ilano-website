@@ -8,8 +8,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/duck-db-paste/index.html",
       "/posts/tableau-color-palette/index.html",
+      "/posts/duck-db-paste/index.html",
       "/posts/api-keys/index.html",
       "/posts/set-up/index.html"
     ]
@@ -21,9 +21,9 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/tableau-color-palette/index.html",
       "/posts/duck-db-paste/index.html",
       "/posts/api-keys/index.html",
-      "/posts/tableau-color-palette/index.html",
       "/posts/set-up/index.html"
     ]
   }

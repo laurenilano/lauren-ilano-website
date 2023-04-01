@@ -38,7 +38,7 @@ Inside the "My Tableau Repository" folder, there will be a file called `Preferen
 
 For our specific color palette, we can add the text below. What you will notice is that we are naming our color palette "my new colors" and have added the 5 hex codes from above. 
 
-```{text}
+```{}
 
 <preferences>
 

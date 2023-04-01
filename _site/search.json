@@ -67,7 +67,7 @@
     "href": "posts/tableau-color-palette/index.html",
     "title": "Adding Color Palettes to Tableau",
     "section": "",
-    "text": "I’m not the most creative person and visualizations are not my favorite thing to work on (sorry!). With that being said, I’m always on the lookout for easy tricks that make it look like I spent more time on a visualization than I actually did 0:)\n\n\n\nlets_get_creative_dont_hug_me_im_scared.jpeg\n\n\nOne of my favorite things to do is to use custom color palettes because it gives the impression of a more polished product without too much effort. To me, its part of the Pareto principle in action and I’m all for that."
+    "text": "I’m not the most creative person and visualizations are not my favorite thing to work on (sorry!). With that being said, I’m always on the lookout for easy tricks that make it look like I spent more time on a visualization than I actually did 0:) In this blog, I’ll go over how to add a custom color palette to Tableau.\nOne of my favorite things to do is to use custom color palettes because it gives the impression of a more polished product without too much effort. To me, its part of the Pareto principle in action and I’m all for that."
   },
   {
     "objectID": "projects folder/Faculty Diversity/index.html",
@@ -137,6 +137,13 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/tableau-color-palette/index.html#footnotes",
+    "href": "posts/tableau-color-palette/index.html#footnotes",
+    "title": "Adding Color Palettes to Tableau",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAs an aside, it’s really funny to me how seriously some colleges take their brand identity. It’s especially rich for an institution within a system like UCLA to use blue and gold to differentiate itself from all the other UCs that also use blue and gold. As they state on their brand guidelines website: “UCLA’s colors evoke the blue of the sea and sky and the gold of the sun and wildflowers, especially the California poppy. There’s a brightness to UCLA Blue and UCLA Gold that’s especially appropriate to Southern California, and different from other University of California campuses.” Okay…lol.↩︎\nThis is a useful RGB to HEX converter: https://htmlcolorcodes.com/rgb-to-hex/↩︎"
   }
 ]
