@@ -2,7 +2,7 @@
 title: "Setting Up an RStudio Server on the Cloud Using Vultr"
 subtitle: "When you just can't get enough RAM"
 author: "Lauren Ilano"
-date: "2023-03-31"
+date: "2023-06-16"
 categories: [rstudio]
 toc: true
 toc-location: left

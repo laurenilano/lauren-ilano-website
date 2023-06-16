@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.290">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lauren Ilano">
+<meta name="dcterms.date" content="2023-03-31">
+
+<title>Lauren Ilano - Setting Up an RStudio Server on the Cloud Using Vultr</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lauren Ilano</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources.html" rel="" target="">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../Ilano 2023 CV.pdf" rel="" target="">
+ <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/laurenilano" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.goodreads.com/user/show/68223454-lauren-m-ilano" rel="" target=""><i class="bi bi-book" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Setting Up an RStudio Server on the Cloud Using Vultr</h1>
+            <p class="subtitle lead">When you just can’t get enough RAM</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">rstudio</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lauren Ilano </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 31, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a-step-by-step-guide-to-setting-up-an-rstudio-server-using-vultr" id="toc-a-step-by-step-guide-to-setting-up-an-rstudio-server-using-vultr" class="nav-link active" data-scroll-target="#a-step-by-step-guide-to-setting-up-an-rstudio-server-using-vultr">A Step-by-Step Guide to Setting Up an RStudio Server Using Vultr</a></li>
+  <li><a href="#what-is-rstudio-server" id="toc-what-is-rstudio-server" class="nav-link" data-scroll-target="#what-is-rstudio-server">What is RStudio Server?</a></li>
+  <li><a href="#why-vultr" id="toc-why-vultr" class="nav-link" data-scroll-target="#why-vultr">Why Vultr?</a></li>
+  <li><a href="#step-1-sign-up-for-vultr" id="toc-step-1-sign-up-for-vultr" class="nav-link" data-scroll-target="#step-1-sign-up-for-vultr">Step 1: Sign up for Vultr</a></li>
+  <li><a href="#step-2-deploy-a-vultr-instance" id="toc-step-2-deploy-a-vultr-instance" class="nav-link" data-scroll-target="#step-2-deploy-a-vultr-instance">Step 2: Deploy a Vultr Instance</a></li>
+  <li><a href="#step-3-connect-to-the-server" id="toc-step-3-connect-to-the-server" class="nav-link" data-scroll-target="#step-3-connect-to-the-server">Step 3: Connect to the Server</a></li>
+  <li><a href="#step-4-install-r-and-r-studio-server" id="toc-step-4-install-r-and-r-studio-server" class="nav-link" data-scroll-target="#step-4-install-r-and-r-studio-server">Step 4: Install R and R Studio Server</a></li>
+  <li><a href="#step-5-configure-firewall-create-a-user-profile-and-access-r-studio-server" id="toc-step-5-configure-firewall-create-a-user-profile-and-access-r-studio-server" class="nav-link" data-scroll-target="#step-5-configure-firewall-create-a-user-profile-and-access-r-studio-server">Step 5: Configure Firewall, Create a User Profile, and Access R Studio Server</a></li>
+  <li><a href="#step-6.-getting-files-on-server" id="toc-step-6.-getting-files-on-server" class="nav-link" data-scroll-target="#step-6.-getting-files-on-server">Step 6. Getting Files on Server</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="a-step-by-step-guide-to-setting-up-an-rstudio-server-using-vultr" class="level1">
+<h1>A Step-by-Step Guide to Setting Up an RStudio Server Using Vultr</h1>
+<p>I am a happy R user but I do acknowledge that R isn’t the best data management tool because of how memory-intensive it is. I’ve been working on some projects recently that have required me to read in super large flat files, which has become impossible given the memory constraints on my laptop. I purchased a macbook air a year ago because I figured that if I ever needed more power I could use some cloud tools or set up a server. I have avoided it until this point, but it has become inevitable so here’s my post on how to set up an rstudio server using Vultr.</p>
+<p><img src="cookie-monster.jpeg" class="quarto-discovered-preview-image img-fluid"></p>
+</section>
+<section id="what-is-rstudio-server" class="level1">
+<h1>What is RStudio Server?</h1>
+<p>RStudio Server is a useful tool that allows you to access RStudio’s integrated development environment (IDE) remotely. By setting up an R Studio Server on a cloud hosting provider like Vultr, you can enjoy the benefits of running R and R Studio from anywhere and harnessing the computing power of the cloud. With RStudio server, you can use the familiar RStudio interface we all know and love while using computing resources on the cloud. In this tutorial, we will walk through the process of setting up an R Studio Server using Vultr.</p>
+</section>
+<section id="why-vultr" class="level1">
+<h1>Why Vultr?</h1>
+<p>There are lots of different platforms you can use to set up an RStudio server: AWS, Digital Ocean, Vultr, etc. I have a Digital Ocean server as well, but the reason I am focusing on Vultr in this blog post is because Digital Ocean only allows you to create instances with 16GB of RAM until you’ve used the platform for a few months.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> I would personally prefer to use Digitial Ocean in the future because it is much easier to upgrade and downgrade your instances when you are not using them, saving you money in the long run. However, being the procrastinator that I am, I needed 32GB of RAM immediately so I decided to use Vultr. Once I am able to unlock the higher tier on Digital Ocean, I do plan to switch and will have a post a blog on how I configured my set-up.</p>
+</section>
+<section id="step-1-sign-up-for-vultr" class="level1">
+<h1>Step 1: Sign up for Vultr</h1>
+<ol type="1">
+<li>Visit the Vultr website and sign up for an account. If you use my <a href="https://www.vultr.com/?ref=9476268-8H">referral link</a> to sign up, you can get $100 of credit and it gives me $35.</li>
+<li>Provide the necessary details and complete the registration process.</li>
+<li>Once registered, log in to your Vultr account.</li>
+</ol>
+</section>
+<section id="step-2-deploy-a-vultr-instance" class="level1">
+<h1>Step 2: Deploy a Vultr Instance</h1>
+<ol type="1">
+<li>After logging in, click the blue plus button to deploy a new server.</li>
+</ol>
+<p><img src="screenshots/vultr_deploy_new_instance.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Choose a server. Since this server is going to be used to run R and I want to have increased memory, I would recommend selecting the Optimized Cloud Compute instance and for server type, select Memory Optimized.</li>
+<li>Now, you need to choose a server location. I selected Los Angeles since it is the closest to where I am in California.</li>
+<li>Next, we want to choose the operating system. For this tutorial, we are going to use Ubuntu. Make sure to select the 20.04 version.</li>
+<li>Choose an appropriate server size based on your requirements. For R Studio Server, a server with at least 2GB RAM is recommended. The thing about Vultr is that it isn’t as easy to scale down to a less powerful instance as it is in Digital Ocean. For this tutorial, we are just going to spin up the 50GB NVMe server with 4 GB of memory. It is $40 per month. Note that even if you power down the server, you will still be charged at the $40 per month rate.</li>
+<li>Vultr automatically signs you up for auto backups for a fee. You can turn this off by toggling the switch.</li>
+<li>The final set is to set up an SSH key. Vultr provides a <a href="https://www.vultr.com/docs/how-do-i-generate-ssh-keys/?_gl=1*l3jawe*_ga*MTUwODc4NjU5OC4xNjg2MTEzNTc3*_ga_K6536FHN4D*MTY4Njk0MzUwOC45LjEuMTY4Njk0NDc2NC4zMS4wLjA.">useful tutorial</a> on how to do this if you don’t already have one set up.</li>
+<li>Click on “Deploy Now” to create the instance. After clicking the “Deploy Now” button, you will be taken to your main page and should see your new instance status as “installing.”</li>
+</ol>
+<p><img src="screenshots/vultr-deploying-new-instance.png" class="img-fluid"></p>
+</section>
+<section id="step-3-connect-to-the-server" class="level1">
+<h1>Step 3: Connect to the Server</h1>
+<ol type="1">
+<li>Once the server is deployed, you will receive an email from Vultr with the server’s IP address, username, and password. You can also access this information by clicking on your instance in your control panel.</li>
+<li>To connect to the server, you need to use an SSH client. If you use a Mac you can use Terminal or use PuTTY on Windows. I have a Mac so I’ll be showing how to do this using Terminal. First, open up your Terminal application on your computer.</li>
+<li>In the terminal application, Connect to the server using the provided IP address and credentials. Note that for now, our usename is root because we haven’t set up any other profiles yet. For example:</li>
+</ol>
+<pre class="{bash}"><code>ssh root@server_ip_address</code></pre>
+<ol start="4" type="1">
+<li><p>The first time you try to connect, you will probably receive a message saying that the authenticity of host can’t be established. It will ask if you are sure you want to continue. Type “Yes” so it adds your server to the list of known hosts.</p></li>
+<li><p>Now, it will ask for a password. This password is located in your server’s control panel on your Vultr account. <img src="screenshots/vultr-get-root-pw.png" class="img-fluid"></p></li>
+<li><p>Copy and paste this into your terminal to connect to your server. You should see some information about your server print to the terminal console. Most importantly, you should see the prompt at the bottom change to <code>root@vultr:~#</code></p></li>
+</ol>
+</section>
+<section id="step-4-install-r-and-r-studio-server" class="level1">
+<h1>Step 4: Install R and R Studio Server</h1>
+<ol type="1">
+<li>Now that we are logged into our server, the first thing we need to do is update the package list on your server by running the following command:</li>
+</ol>
+<pre class="{bash}"><code>sudo apt-get update</code></pre>
+<ol start="2" type="1">
+<li>Next, we want to install R. I needed at least R version 4.0 so I needed to add focal to our sources list. See Dean Attali’s awesome blog on setting up an RStudio and Shiny server <a href="https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/#install-rstudio">here</a></li>
+</ol>
+<pre class="{bash}"><code>sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu focal-cran40/" &gt;&gt; /etc/apt/sources.list'
+
+gpg --keyserver keyserver.ubuntu.com --recv-key E298A3A825C0D65DFD57CBB651716619E084DAB9
+
+gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | sudo apt-key add -
+
+sudo apt-get update
+sudo apt-get install r-base</code></pre>
+<p>We can check to make sure that R installed correctly by typing “R” into the terminal and pressing enter. You should see R start up like below:</p>
+<p>!()[screenshots/start-r.png]</p>
+<ol start="3" type="1">
+<li>Next, install the necessary dependencies for R Studio Server:</li>
+</ol>
+<pre class="{bash}"><code>sudo apt-get install gdebi-core</code></pre>
+<ol start="4" type="1">
+<li>Then, Use the <code>wget</code> command to download the .deb file. You can go to the <a href="https://posit.co/download/rstudio-server/">Posit website</a> to make sure you are downloading the most recent version (Note: Replace the URL with the appropriate link if a newer version of RStudio is available).</li>
+</ol>
+<pre class="{bash}"><code>wget https://download2.rstudio.org/server/focal/amd64/rstudio-server-2023.06.0-421-amd64.deb</code></pre>
+<ol start="5" type="1">
+<li>Install the downloaded package using <code>gdebi</code>. Note: this may take a bit.</li>
+</ol>
+<pre class="{bash}"><code>sudo gdebi rstudio-server-2023.06.0-421-amd64.deb</code></pre>
+<ol start="6" type="1">
+<li>Start the R Studio Server service:</li>
+</ol>
+<pre class="{bash}"><code>sudo rstudio-server start</code></pre>
+</section>
+<section id="step-5-configure-firewall-create-a-user-profile-and-access-r-studio-server" class="level1">
+<h1>Step 5: Configure Firewall, Create a User Profile, and Access R Studio Server</h1>
+<ol type="1">
+<li>At this point, are server is up and running, but we have to configure the firewall to allowing incoming connections.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> By default, R Studio Server listens on port 8787. Open the necessary port in your firewall to allow incoming connections. In your terminal, enter the following command:</li>
+</ol>
+<pre class="{bash}"><code>sudo ufw allow 8787</code></pre>
+<ol start="2" type="1">
+<li>Now we can access R Studio Server by opening a web browser and entering the server’s IP address followed by port 8787 (e.g., <code>http://10.10.10.10:8787</code>). You should see the following log in page:</li>
+</ol>
+<p><img src="screenshots/server-log-in.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>You can now log in to R Studio Server using your server username and password. Your username and password are going to be the accounts on your server. On our Vultr test server, we only have a root profile so far. Let’s create another user on our server. Also note that if you have a team of folks, you can create an account for each person so they can access the RStudio server using their own credentials. To create a new user, in your terminal, type the following command:</li>
+</ol>
+<pre class="{bash}"><code>sudo adduser lauren</code></pre>
+<p>You will need to set a password and enter directory information. Now I can log in to my RStudio server using my new profile:</p>
+<p><img src="screenshots/new-r-profile.png" class="img-fluid"></p>
+<p>Once you log in, you will see a familiar RStudio interface.</p>
+<p><img src="screenshots/rserver_interface.png" class="img-fluid"></p>
+</section>
+<section id="step-6.-getting-files-on-server" class="level1">
+<h1>Step 6. Getting Files on Server</h1>
+<p>Right now, since we built a fresh instance, there are no files on the machine. The whole point of getting this server set up was to be able to run R code on the cloud so we are going to need to find a way to get our R scripts and data onto the server.</p>
+<p>The first thing we will do is create a folder called <code>testfiles</code> in our lauren user folder where we want to place our files from our local computer. In the terminal, type the following commands to go to the created user folder and make a folder called <code>testfiles</code>. Change out <code>lauren</code> for whatever your new user profile is called.</p>
+<pre class="{bash}"><code>cd home/lauren
+mkdir testfiles
+sudo chmod a+rwx /home/lauren/testfiles</code></pre>
+<p>Now that we’ve made our target folder in our RStudio server, we need to open up another terminal window on our desktop to start the secure copy process using the linux <code>scp</code> command. Notice how in the terminal I am using my macbook air account and copying a file called <code>endowment_project.R</code> over to the RStudio server.</p>
+<p><img src="screenshots/scp.png" class="img-fluid"></p>
+<pre class="{bash}"><code>scp -p ~/Downloads/endowment_project.R lauren@45.76.76.224:~/testfiles</code></pre>
+<p>Now when I go to the RStudio server, I can see my file in the testfiles folder:</p>
+<p><img src="screenshots/testfiles.png" class="img-fluid"></p>
+<p>You can repeat the process with more files or even copy entire folders to the RStudio server. You could also connect to Dropbox or Google drive if you need to.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>At least that’s what they told me… I guess they want to make sure you are going to pay for your usage so they won’t unlock the higher tiers until you have a few months under your belt… I even asked if I could pay up from and they said no :(<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>When setting up a Digital Ocean droplet, you wont have to do this step.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Made with <a href="https://quarto.org/">Quarto</a></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Contact Me
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:laurenilano@gmail.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
