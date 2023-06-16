@@ -137,7 +137,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSetting Up an RStudio Server on the Cloud Using Vultr\n\n\nWhen you just can’t get enough RAM\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSetting Up an RStudio Server on the Cloud Using Vultr\n\n\nWhen you just can’t get enough RAM\n\n\n\n\n\n\nJun 16, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/tableau-color-palette/index.html#footnotes",
@@ -158,6 +158,6 @@
     "href": "posts/rstudio-server-on-vultr/index.html#footnotes",
     "title": "Setting Up an RStudio Server on the Cloud Using Vultr",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nAt least that’s what they told me… I guess they want to make sure you are going to pay for your usage so they won’t unlock the higher tiers until you have a few months under your belt… I even asked if I could pay up from and they said no :(↩︎\nWhen setting up a Digital Ocean droplet, you wont have to do this step.↩︎"
+    "text": "Footnotes\n\n\nAt least that’s what they told me… I guess they want to make sure you are going to pay for your usage so they won’t unlock the higher tiers until you have a few months under your belt… I even asked if I could pay up from and they said no :(↩︎\nWhen setting up a Digital Ocean droplet, you wont have to do this step.↩︎\nIf you want more info on how to transfer files using scp, I’d highly recommend IU’s kb site: https://kb.iu.edu/d/agye#:~:text=The%20scp%20command%20uses%20SSH,the%20network%20cannot%20view%20them.↩︎"
   }
 ]
