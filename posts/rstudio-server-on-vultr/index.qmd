@@ -1,5 +1,5 @@
 ---
-title: "Setting Up an RStudio Server on the Cloud Using Vultr"
+title: "Setting Up an R Studio Server on the Cloud Using Vultr"
 subtitle: "When you just can't get enough RAM"
 author: "Lauren Ilano"
 date: "2023-06-16"
@@ -10,15 +10,15 @@ image: cookie-monster.jpeg
 title-block-banner: true
 ---
 
-I am a happy R user but I do acknowledge that R isn't the best data management tool because of how memory-intensive it is. I've been working on some projects recently that have required me to read in super large flat files, which has become impossible given the memory constraints on my laptop. I purchased a macbook air a year ago because I figured that if I ever needed more power I could use some cloud tools or set up a server. I have avoided it until this point, but it has become inevitable so here's my post on how to set up an rstudio server using Vultr. 
+I am a happy R user but I do acknowledge that R isn't the best data management tool because of how memory-intensive it is. I've been working on some projects recently that have required me to read in super large flat files, which has become impossible given the memory constraints on my laptop. I purchased a Macbook Air a year ago because I figured that if I ever needed more power I could use some cloud tools or set up a server. I have avoided it until this point, but it has become inevitable so here's my post on how to set up an R Studio server using Vultr. 
 
 ![](cookie-monster.jpeg)
 
-# What is RStudio Server?
-RStudio Server is a useful tool that allows you to access RStudio's integrated development environment (IDE) remotely. By setting up an R Studio Server on a cloud hosting provider like Vultr, you can enjoy the benefits of running R and R Studio from anywhere and harnessing the computing power of the cloud. With RStudio server, you can use the familiar RStudio interface we all know and love while using computing resources on the cloud. In this tutorial, we will walk through the process of setting up an R Studio Server using Vultr.
+# What is R Studio Server?
+R Studio Server is a useful tool that allows you to access R Studio's integrated development environment (IDE) remotely. By setting up an R Studio Server on a cloud hosting provider like Vultr, you can enjoy the benefits of running R and R Studio from anywhere and harnessing the computing power of the cloud. With R Studio server, you can use the familiar R Studio interface we all know and love while using computing resources on the cloud. In this tutorial, we will walk through the process of setting up an R Studio Server using Vultr.
 
 #  Why Vultr?
-There are lots of different platforms you can use to set up an RStudio server: AWS, Digital Ocean, Vultr, etc. I have a Digital Ocean server as well, but the reason I am focusing on Vultr in this blog post is because Digital Ocean only allows you to create instances with 16GB of RAM until you've used the platform for a few months.^[At least that's what they told me... I guess they want to make sure you are going to pay for your usage so they won't unlock the higher tiers until you have a few months under your belt... I even asked if I could pay up from and they said no :(] I would personally prefer to use Digitial Ocean in the future because it is much easier to upgrade and downgrade your instances when you are not using them, saving you money in the long run. However, being the procrastinator that I am, I needed 32GB of RAM immediately so I decided to use Vultr. Once I am able to unlock the higher tier on Digital Ocean, I do plan to switch and will have a post a blog on how I configured my set-up. 
+There are lots of different platforms you can use to set up an R Studio server: AWS, Digital Ocean, Vultr, etc. I have a Digital Ocean server as well, but the reason I am focusing on Vultr in this blog post is because Digital Ocean only allows you to create instances with 16GB of RAM until you've used the platform for a few months.^[At least that's what they told me... I guess they want to make sure you are going to pay for your usage so they won't unlock the higher tiers until you have a few months under your belt... I even asked if I could pay up from and they said no :(] I would personally prefer to use Digitial Ocean in the future because it is much easier to upgrade and downgrade your instances when you are not using them, saving you money in the long run. However, being the procrastinator that I am, I needed 32GB of RAM immediately so I decided to use Vultr. Once I am able to unlock the higher tier on Digital Ocean, I do plan to switch and will have a post a blog on how I configured my set-up. 
 
 # Step 1: Sign up for Vultr
 1. Visit the Vultr website and sign up for an account. If you use my [referral link](https://www.vultr.com/?ref=9476268-8H) to sign up, you can get \$100 of credit and it gives me \$35.  
@@ -77,7 +77,7 @@ There are lots of different platforms you can use to set up an RStudio server: A
 ```
    
 
-2. Next, we want to install R. I needed at least R version 4.0 so I needed to add focal to our sources list. See Dean Attali's awesome blog on setting up an RStudio and Shiny server [here](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/#install-rstudio)
+2. Next, we want to install R. I needed at least R version 4.0 so I needed to add focal to our sources list. See Dean Attali's awesome blog on setting up an R Studio and Shiny server [here](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/#install-rstudio)
 
 
 ```
@@ -102,7 +102,7 @@ We can check to make sure that R installed correctly by typing "R" into the term
 ```
 
 
-4. Then, Use the `wget` command to download the .deb file. You can go to the [Posit website](https://posit.co/download/rstudio-server/) to make sure you are downloading the most recent version (Note: Replace the URL with the appropriate link if a newer version of RStudio is available).
+4. Then, Use the `wget` command to download the .deb file. You can go to the [Posit website](https://posit.co/download/rstudio-server/) to make sure you are downloading the most recent version (Note: Replace the URL with the appropriate link if a newer version of R Studio is available).
 
 
 ```
@@ -135,22 +135,22 @@ We can check to make sure that R installed correctly by typing "R" into the term
 
 ![](screenshots/server-log-in.png)
 
-4. You can now log in to R Studio Server using your server username and password. Your username and password are going to be the accounts on your server. On our Vultr test server, we only have a root profile so far. Let's create another user on our server. Also note that if you have a team of folks, you can create an account for each person so they can access the RStudio server using their own credentials. To create a new user, in your terminal, type the following command:
+4. You can now log in to R Studio Server using your server username and password. Your username and password are going to be the accounts on your server. On our Vultr test server, we only have a root profile so far. Let's create another user on our server. Also note that if you have a team of folks, you can create an account for each person so they can access the R Studio server using their own credentials. To create a new user, in your terminal, type the following command:
 
 ```
       sudo adduser lauren
 ```
 
-You will need to set a password and enter directory information. Now I can log in to my RStudio server using my new profile:
+You will need to set a password and enter directory information. Now I can log in to my R Studio server using my new profile:
 
 ![](screenshots/new-r-profile.png)
 
-Once you log in, you will see a familiar RStudio interface. 
+Once you log in, you will see a familiar R Studio interface. 
 
 ![](screenshots/rserver_interface.png)
 
 
-# Step 6. Getting Files on our RStudio Server
+# Step 6. Getting Files on our R Studio Server
 
 Right now, since we built a fresh instance, there are no files on the machine. The whole point of getting this server set up was to be able to run R code on the cloud so we are going to need to find a way to get our R scripts and data onto the server. 
 
@@ -163,7 +163,7 @@ The first thing we will do is create a folder called `testfiles` in our lauren u
       sudo chmod a+rwx /home/lauren/testfiles
 ```
 
-Now that we've made our target folder in our RStudio server, we need to open up another terminal window on our desktop to start the secure copy process using the linux `scp` command. Notice how in the terminal I am using my macbook air account and copying a file called `endowment_project.R` over to the RStudio server. 
+Now that we've made our target folder in our R Studio server, we need to open up another terminal window on our desktop to start the secure copy process using the linux `scp` command. Notice how in the terminal I am using my macbook air account and copying a file called `endowment_project.R` over to the R Studio server. 
 
 ![](screenshots/scp.png)
 
@@ -171,11 +171,11 @@ Now that we've made our target folder in our RStudio server, we need to open up 
       scp -p ~/Downloads/endowment_project.R lauren@00.00.00.00:~/testfiles
 ```
 
-Now when I go to the RStudio server, I can see my file in the testfiles folder:
+Now when I go to the R Studio server, I can see my file in the testfiles folder:
 
 ![](screenshots/testfiles.png)
 
-You can repeat the process with more files or even copy entire folders to the RStudio server. You could also connect to Dropbox or Google drive if you need to.^[If you want more info on how to transfer files using scp, I'd highly recommend IU's kb site: https://kb.iu.edu/d/agye#:~:text=The%20scp%20command%20uses%20SSH,the%20network%20cannot%20view%20them.]
+You can repeat the process with more files or even copy entire folders to the R Studio server. You could also connect to Dropbox or Google drive if you need to.^[If you want more info on how to transfer files using scp, I'd highly recommend IU's kb site: https://kb.iu.edu/d/agye#:~:text=The%20scp%20command%20uses%20SSH,the%20network%20cannot%20view%20them.]
 
 
 
