@@ -88,7 +88,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "(Lack of) Faculty Diversity\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Dual Enrollment for Equitable Completion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 28, 2024\n\n\n\n\n\n\n  \n\n\n\n\n(Lack of) Faculty Diversity\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -137,7 +137,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSetting Up an RStudio Server on the Cloud Using Vultr\n\n\nWhen you just can’t get enough RAM\n\n\n\n\n\n\nJun 16, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSetting Up an R Studio Server on the Cloud Using Vultr\n\n\nWhen you just can’t get enough RAM\n\n\n\n\n\n\nJun 16, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/tableau-color-palette/index.html#footnotes",
@@ -149,15 +149,22 @@
   {
     "objectID": "posts/rstudio-server-on-vultr/index.html",
     "href": "posts/rstudio-server-on-vultr/index.html",
-    "title": "Setting Up an RStudio Server on the Cloud Using Vultr",
+    "title": "Setting Up an R Studio Server on the Cloud Using Vultr",
     "section": "",
-    "text": "I am a happy R user but I do acknowledge that R isn’t the best data management tool because of how memory-intensive it is. I’ve been working on some projects recently that have required me to read in super large flat files, which has become impossible given the memory constraints on my laptop. I purchased a macbook air a year ago because I figured that if I ever needed more power I could use some cloud tools or set up a server. I have avoided it until this point, but it has become inevitable so here’s my post on how to set up an rstudio server using Vultr."
+    "text": "I am a happy R user but I do acknowledge that R isn’t the best data management tool because of how memory-intensive it is. I’ve been working on some projects recently that have required me to read in super large flat files, which has become impossible given the memory constraints on my laptop. I purchased a Macbook Air a year ago because I figured that if I ever needed more power I could use some cloud tools or set up a server. I have avoided it until this point, but it has become inevitable so here’s my post on how to set up an R Studio server using Vultr."
   },
   {
     "objectID": "posts/rstudio-server-on-vultr/index.html#footnotes",
     "href": "posts/rstudio-server-on-vultr/index.html#footnotes",
-    "title": "Setting Up an RStudio Server on the Cloud Using Vultr",
+    "title": "Setting Up an R Studio Server on the Cloud Using Vultr",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nAt least that’s what they told me… I guess they want to make sure you are going to pay for your usage so they won’t unlock the higher tiers until you have a few months under your belt… I even asked if I could pay up from and they said no :(↩︎\nWhen setting up a Digital Ocean droplet, you wont have to do this step.↩︎\nIf you want more info on how to transfer files using scp, I’d highly recommend IU’s kb site: https://kb.iu.edu/d/agye#:~:text=The%20scp%20command%20uses%20SSH,the%20network%20cannot%20view%20them.↩︎"
+  },
+  {
+    "objectID": "projects folder/DE4EC/index.html",
+    "href": "projects folder/DE4EC/index.html",
+    "title": "Dual Enrollment for Equitable Completion",
+    "section": "",
+    "text": "Dual Enrollment for Equitable Completion (DE4EC) is a multi-year collaborative initiative among the Bill & Melinda Gates Foundation, College Futures Foundation, and Tipping Point Community, carried out with research support provided by RDP Consulting. DE4EC works with 10 CCCs and HS parners to advance equitable dual enrollment.\nThe quantitative report and accompanying briefs use data from CalPASS Plus to identify baseline dual enrollment offerings, disaggregated dual enrollment participation rates, high school outcomes, and college access metrics for the 10 partnerships supported by DE4EC.\nSee the full report here"
   }
 ]

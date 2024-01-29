@@ -1,0 +1,20 @@
+---
+title: 'Dual Enrollment for Equitable Completion'
+date: '2024-01-28'
+categories: ['Projects']
+description: ''
+image: de4ec-report-cover.png
+execute: 
+  message: false
+  warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+Dual Enrollment for Equitable Completion (DE4EC) is a multi-year collaborative initiative among the Bill & Melinda Gates Foundation, College Futures Foundation, and Tipping Point Community, carried out with research support provided by [RDP Consulting](https://www.r-d-p-consulting.com/). DE4EC works with 10 CCCs and HS parners to advance equitable dual enrollment. 
+
+The quantitative report and accompanying briefs use data from [CalPASS Plus](https://www.calpassplus.org/Home) to identify baseline dual enrollment offerings, disaggregated dual enrollment participation rates, high school outcomes, and college access metrics for the 10 partnerships supported by DE4EC.
+
+[See the full report here](https://www.r-d-p-consulting.com/_files/ugd/348955_a171e931e318421ebd34aff78c478ea8.pdf)
+
+![](de4ec-report-cover.png)

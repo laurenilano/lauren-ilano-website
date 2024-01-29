@@ -9,7 +9,7 @@
 <meta name="author" content="Lauren Ilano">
 <meta name="dcterms.date" content="2023-06-16">
 
-<title>Lauren Ilano - Setting Up an RStudio Server on the Cloud Using Vultr</title>
+<title>Lauren Ilano - Setting Up an R Studio Server on the Cloud Using Vultr</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Ilano 2023 CV.pdf" rel="" target="">
+    <a class="nav-link" href="../../Ilano 2024 CV.pdf" rel="" target="">
  <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item compact">
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Setting Up an RStudio Server on the Cloud Using Vultr</h1>
+      <h1 class="title">Setting Up an R Studio Server on the Cloud Using Vultr</h1>
             <p class="subtitle lead">When you just can’t get enough RAM</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">rstudio</div>
@@ -159,14 +159,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-rstudio-server" id="toc-what-is-rstudio-server" class="nav-link active" data-scroll-target="#what-is-rstudio-server">What is RStudio Server?</a></li>
+  <li><a href="#what-is-r-studio-server" id="toc-what-is-r-studio-server" class="nav-link active" data-scroll-target="#what-is-r-studio-server">What is R Studio Server?</a></li>
   <li><a href="#why-vultr" id="toc-why-vultr" class="nav-link" data-scroll-target="#why-vultr">Why Vultr?</a></li>
   <li><a href="#step-1-sign-up-for-vultr" id="toc-step-1-sign-up-for-vultr" class="nav-link" data-scroll-target="#step-1-sign-up-for-vultr">Step 1: Sign up for Vultr</a></li>
   <li><a href="#step-2-deploy-a-vultr-instance" id="toc-step-2-deploy-a-vultr-instance" class="nav-link" data-scroll-target="#step-2-deploy-a-vultr-instance">Step 2: Deploy a Vultr Instance</a></li>
   <li><a href="#step-3-connect-to-the-server" id="toc-step-3-connect-to-the-server" class="nav-link" data-scroll-target="#step-3-connect-to-the-server">Step 3: Connect to the Server</a></li>
   <li><a href="#step-4-install-r-and-r-studio-server" id="toc-step-4-install-r-and-r-studio-server" class="nav-link" data-scroll-target="#step-4-install-r-and-r-studio-server">Step 4: Install R and R Studio Server</a></li>
   <li><a href="#step-5-configure-firewall-create-a-user-profile-and-access-r-studio-server" id="toc-step-5-configure-firewall-create-a-user-profile-and-access-r-studio-server" class="nav-link" data-scroll-target="#step-5-configure-firewall-create-a-user-profile-and-access-r-studio-server">Step 5: Configure Firewall, Create a User Profile, and Access R Studio Server</a></li>
-  <li><a href="#step-6.-getting-files-on-our-rstudio-server" id="toc-step-6.-getting-files-on-our-rstudio-server" class="nav-link" data-scroll-target="#step-6.-getting-files-on-our-rstudio-server">Step 6. Getting Files on our RStudio Server</a></li>
+  <li><a href="#step-6.-getting-files-on-our-r-studio-server" id="toc-step-6.-getting-files-on-our-r-studio-server" class="nav-link" data-scroll-target="#step-6.-getting-files-on-our-r-studio-server">Step 6. Getting Files on our R Studio Server</a></li>
   </ul>
 </nav>
 </nav>
@@ -180,15 +180,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>I am a happy R user but I do acknowledge that R isn’t the best data management tool because of how memory-intensive it is. I’ve been working on some projects recently that have required me to read in super large flat files, which has become impossible given the memory constraints on my laptop. I purchased a macbook air a year ago because I figured that if I ever needed more power I could use some cloud tools or set up a server. I have avoided it until this point, but it has become inevitable so here’s my post on how to set up an rstudio server using Vultr.</p>
+<p>I am a happy R user but I do acknowledge that R isn’t the best data management tool because of how memory-intensive it is. I’ve been working on some projects recently that have required me to read in super large flat files, which has become impossible given the memory constraints on my laptop. I purchased a Macbook Air a year ago because I figured that if I ever needed more power I could use some cloud tools or set up a server. I have avoided it until this point, but it has become inevitable so here’s my post on how to set up an R Studio server using Vultr.</p>
 <p><img src="cookie-monster.jpeg" class="quarto-discovered-preview-image img-fluid"></p>
-<section id="what-is-rstudio-server" class="level1">
-<h1>What is RStudio Server?</h1>
-<p>RStudio Server is a useful tool that allows you to access RStudio’s integrated development environment (IDE) remotely. By setting up an R Studio Server on a cloud hosting provider like Vultr, you can enjoy the benefits of running R and R Studio from anywhere and harnessing the computing power of the cloud. With RStudio server, you can use the familiar RStudio interface we all know and love while using computing resources on the cloud. In this tutorial, we will walk through the process of setting up an R Studio Server using Vultr.</p>
+<section id="what-is-r-studio-server" class="level1">
+<h1>What is R Studio Server?</h1>
+<p>R Studio Server is a useful tool that allows you to access R Studio’s integrated development environment (IDE) remotely. By setting up an R Studio Server on a cloud hosting provider like Vultr, you can enjoy the benefits of running R and R Studio from anywhere and harnessing the computing power of the cloud. With R Studio server, you can use the familiar R Studio interface we all know and love while using computing resources on the cloud. In this tutorial, we will walk through the process of setting up an R Studio Server using Vultr.</p>
 </section>
 <section id="why-vultr" class="level1">
 <h1>Why Vultr?</h1>
-<p>There are lots of different platforms you can use to set up an RStudio server: AWS, Digital Ocean, Vultr, etc. I have a Digital Ocean server as well, but the reason I am focusing on Vultr in this blog post is because Digital Ocean only allows you to create instances with 16GB of RAM until you’ve used the platform for a few months.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> I would personally prefer to use Digitial Ocean in the future because it is much easier to upgrade and downgrade your instances when you are not using them, saving you money in the long run. However, being the procrastinator that I am, I needed 32GB of RAM immediately so I decided to use Vultr. Once I am able to unlock the higher tier on Digital Ocean, I do plan to switch and will have a post a blog on how I configured my set-up.</p>
+<p>There are lots of different platforms you can use to set up an R Studio server: AWS, Digital Ocean, Vultr, etc. I have a Digital Ocean server as well, but the reason I am focusing on Vultr in this blog post is because Digital Ocean only allows you to create instances with 16GB of RAM until you’ve used the platform for a few months.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> I would personally prefer to use Digitial Ocean in the future because it is much easier to upgrade and downgrade your instances when you are not using them, saving you money in the long run. However, being the procrastinator that I am, I needed 32GB of RAM immediately so I decided to use Vultr. Once I am able to unlock the higher tier on Digital Ocean, I do plan to switch and will have a post a blog on how I configured my set-up.</p>
 </section>
 <section id="step-1-sign-up-for-vultr" class="level1">
 <h1>Step 1: Sign up for Vultr</h1>
@@ -236,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <pre><code>      sudo apt-get update</code></pre>
 <ol start="2" type="1">
-<li>Next, we want to install R. I needed at least R version 4.0 so I needed to add focal to our sources list. See Dean Attali’s awesome blog on setting up an RStudio and Shiny server <a href="https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/#install-rstudio">here</a></li>
+<li>Next, we want to install R. I needed at least R version 4.0 so I needed to add focal to our sources list. See Dean Attali’s awesome blog on setting up an R Studio and Shiny server <a href="https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/#install-rstudio">here</a></li>
 </ol>
 <pre><code>      sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu focal-cran40/" &gt;&gt; /etc/apt/sources.list'
 
@@ -253,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <pre><code>      sudo apt-get install gdebi-core</code></pre>
 <ol start="4" type="1">
-<li>Then, Use the <code>wget</code> command to download the .deb file. You can go to the <a href="https://posit.co/download/rstudio-server/">Posit website</a> to make sure you are downloading the most recent version (Note: Replace the URL with the appropriate link if a newer version of RStudio is available).</li>
+<li>Then, Use the <code>wget</code> command to download the .deb file. You can go to the <a href="https://posit.co/download/rstudio-server/">Posit website</a> to make sure you are downloading the most recent version (Note: Replace the URL with the appropriate link if a newer version of R Studio is available).</li>
 </ol>
 <pre><code>      wget https://download2.rstudio.org/server/focal/amd64/rstudio-server-2023.06.0-421-amd64.deb</code></pre>
 <ol start="5" type="1">
@@ -276,27 +276,27 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p><img src="screenshots/server-log-in.png" class="img-fluid"></p>
 <ol start="4" type="1">
-<li>You can now log in to R Studio Server using your server username and password. Your username and password are going to be the accounts on your server. On our Vultr test server, we only have a root profile so far. Let’s create another user on our server. Also note that if you have a team of folks, you can create an account for each person so they can access the RStudio server using their own credentials. To create a new user, in your terminal, type the following command:</li>
+<li>You can now log in to R Studio Server using your server username and password. Your username and password are going to be the accounts on your server. On our Vultr test server, we only have a root profile so far. Let’s create another user on our server. Also note that if you have a team of folks, you can create an account for each person so they can access the R Studio server using their own credentials. To create a new user, in your terminal, type the following command:</li>
 </ol>
 <pre><code>      sudo adduser lauren</code></pre>
-<p>You will need to set a password and enter directory information. Now I can log in to my RStudio server using my new profile:</p>
+<p>You will need to set a password and enter directory information. Now I can log in to my R Studio server using my new profile:</p>
 <p><img src="screenshots/new-r-profile.png" class="img-fluid"></p>
-<p>Once you log in, you will see a familiar RStudio interface.</p>
+<p>Once you log in, you will see a familiar R Studio interface.</p>
 <p><img src="screenshots/rserver_interface.png" class="img-fluid"></p>
 </section>
-<section id="step-6.-getting-files-on-our-rstudio-server" class="level1">
-<h1>Step 6. Getting Files on our RStudio Server</h1>
+<section id="step-6.-getting-files-on-our-r-studio-server" class="level1">
+<h1>Step 6. Getting Files on our R Studio Server</h1>
 <p>Right now, since we built a fresh instance, there are no files on the machine. The whole point of getting this server set up was to be able to run R code on the cloud so we are going to need to find a way to get our R scripts and data onto the server.</p>
 <p>The first thing we will do is create a folder called <code>testfiles</code> in our lauren user folder where we want to place our files from our local computer. In the terminal, type the following commands to go to the created user folder and make a folder called <code>testfiles</code>. Change out <code>lauren</code> for whatever your new user profile is called.</p>
 <pre><code>      cd home/lauren
       mkdir testfiles
       sudo chmod a+rwx /home/lauren/testfiles</code></pre>
-<p>Now that we’ve made our target folder in our RStudio server, we need to open up another terminal window on our desktop to start the secure copy process using the linux <code>scp</code> command. Notice how in the terminal I am using my macbook air account and copying a file called <code>endowment_project.R</code> over to the RStudio server.</p>
+<p>Now that we’ve made our target folder in our R Studio server, we need to open up another terminal window on our desktop to start the secure copy process using the linux <code>scp</code> command. Notice how in the terminal I am using my macbook air account and copying a file called <code>endowment_project.R</code> over to the R Studio server.</p>
 <p><img src="screenshots/scp.png" class="img-fluid"></p>
 <pre><code>      scp -p ~/Downloads/endowment_project.R lauren@00.00.00.00:~/testfiles</code></pre>
-<p>Now when I go to the RStudio server, I can see my file in the testfiles folder:</p>
+<p>Now when I go to the R Studio server, I can see my file in the testfiles folder:</p>
 <p><img src="screenshots/testfiles.png" class="img-fluid"></p>
-<p>You can repeat the process with more files or even copy entire folders to the RStudio server. You could also connect to Dropbox or Google drive if you need to.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>You can repeat the process with more files or even copy entire folders to the R Studio server. You could also connect to Dropbox or Google drive if you need to.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 
 
 </section>
