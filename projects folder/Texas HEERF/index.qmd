@@ -1,0 +1,20 @@
+---
+title: 'Texas HEERF Spending Data Tool'
+date: '2024-01-28'
+categories: ['Projects']
+description: ''
+image: texas-heerf-data-tool.png
+execute: 
+  message: false
+  warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+[![](texas-heerf-data-tool.png)](https://edtrust.org/resource/who-received-federal-emergency-aid-funding-in-texas-a-closer-look-at-the-pandemic-funding-awarded-to-postsecondary-students/)
+
+In response to the pandemic, the federal government made one of the most substantial investments ever in the nation’s colleges and universities through the Higher Education Emergency Relief Fund (HEERF). Since 2020, Texas postsecondary institutions have received more than \$6.5 billion, of which \$2.5 billion was required to be distributed directly to students in the form of emergency aid.
+
+Based on available reporting from calendar year 2021, the interactive data tool reflects the flow of these funds from the Department of Education to postsecondary institutions in Texas and ultimately to students. The dashboard examines the distribution of emergency aid based on institutional type and sector, student race/ethnicity, and Pell status. We also explore the impact of institutional choice points when deciding whether to require student applications and supporting documentation, as well as trends related to institution-level student retention rates.
+
+[See the full blog and link to the data tool here](https://edtrust.org/resource/who-received-federal-emergency-aid-funding-in-texas-a-closer-look-at-the-pandemic-funding-awarded-to-postsecondary-students/)
