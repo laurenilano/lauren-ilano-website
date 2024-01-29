@@ -88,7 +88,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Dual Enrollment for Equitable Completion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 28, 2024\n\n\n\n\n\n\n  \n\n\n\n\nTexas HEERF Spending Data Tool\n\n\n\n\n\n\n\n\n\n\n\n\nJan 28, 2024\n\n\n\n\n\n\n  \n\n\n\n\n(Lack of) Faculty Diversity\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Texas HEERF Spending Data Tool\n\n\n\n\n\n\n\n\n\n\n\n\nJan 28, 2024\n\n\n\n\n\n\n  \n\n\n\n\nDual Enrollment for Equitable Completion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 27, 2024\n\n\n\n\n\n\n  \n\n\n\n\n(Lack of) Faculty Diversity\n\n\n\n\n\n\n\n\n\n\n\n\nFeb 4, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -137,7 +137,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSetting Up an R Studio Server on the Cloud Using Vultr\n\n\nWhen you just can’t get enough RAM\n\n\n\n\n\n\nJun 16, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSetting up OpenMP on Apple Silicon Mac\n\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\n\n\n\n\n  \n\n\n\n\nSetting Up an R Studio Server on the Cloud Using Vultr\n\n\nWhen you just can’t get enough RAM\n\n\n\n\n\n\nJun 16, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/tableau-color-palette/index.html#footnotes",
@@ -173,5 +173,19 @@
     "title": "Texas HEERF Spending Data Tool",
     "section": "",
     "text": "In response to the pandemic, the federal government made one of the most substantial investments ever in the nation’s colleges and universities through the Higher Education Emergency Relief Fund (HEERF). Since 2020, Texas postsecondary institutions have received more than $6.5 billion, of which $2.5 billion was required to be distributed directly to students in the form of emergency aid.\nBased on available reporting from calendar year 2021, the interactive data tool reflects the flow of these funds from the Department of Education to postsecondary institutions in Texas and ultimately to students. The dashboard examines the distribution of emergency aid based on institutional type and sector, student race/ethnicity, and Pell status. We also explore the impact of institutional choice points when deciding whether to require student applications and supporting documentation, as well as trends related to institution-level student retention rates.\nSee the full blog and link to the data tool here"
+  },
+  {
+    "objectID": "posts/multiple-threads-m1-mac/index.html",
+    "href": "posts/multiple-threads-m1-mac/index.html",
+    "title": "Setting up OpenMP on Apple Silicon Mac",
+    "section": "",
+    "text": "This blog post is an example of two things:\nI am used to just installing packages in R and having them just work. I honestly did not even pay much attention to the warning I would get when loading fst: “OpenMP was not detected, using single threaded mode.” It wasn’t until someone pointed out that I was only using a single thread that I noticed something was wrong–or performance could’ve been improved if I had paid a bit more attention.\nI am not an expert on why the default mac version of the C-compiler does not support OpenMP. I did however get it to work on my M1 mac so I figured I would document the steps here and share. I am also writing this to my future self to help me through setting this up on future computers.\nSetting Up OpenMP multi threads for data.table and fst()\nxcode-select --install\nbrew\nbrew install pkg-config\nbrew install llvm libomp gcc\nmkdir ~/.R\ntouch ~/.R/Makevars\nLDFLAGS += -L/opt/homebrew/opt/libomp/lib -lomp\nCPPFLAGS += -I/opt/homebrew/opt/libomp/include -Xclang -fopenmp\n# In terminal\nR\ninstall.packages(\"data.table\", type = \"source\")\n\nquit() # quit R\nlibrary(data.table)\ngetDTthreads() # check # of threads\nLDFLAGS += -L/opt/homebrew/opt/libomp/lib -lomp\n# CPPFLAGS += -I/opt/homebrew/opt/libomp/include -Xclang -fopenmp\n\nCXX1X=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp # had to brew install gcc\nCXX98=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp\nCXX11=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp\nCXX14=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp\nCXX17=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp\ncd /opt/homebrew/Cellar/gcc\nls\nR\ninstall.packages(\"fstcore\", type = \"source\")\ninstall.packages(\"fst\", type = \"source\")\nquit()\nlibrary(fst)\nthreads_fst()\n\n[1] 8"
+  },
+  {
+    "objectID": "posts/multiple-threads-m1-mac/index.html#footnotes",
+    "href": "posts/multiple-threads-m1-mac/index.html#footnotes",
+    "title": "Setting up OpenMP on Apple Silicon Mac",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nand yet, I will continue to stan and it will always be my preferred OS so plz don’t try and change my mind.↩︎"
   }
 ]

@@ -1,0 +1,109 @@
+---
+title: "Setting up OpenMP on Apple Silicon Mac"
+author: "Lauren Ilano"
+date: "2024-01-29"
+categories: [mac]
+toc: false
+image: scout-comp.jpg
+title-block-banner: true
+---
+
+This blog post is an example of two things:
+
+1. You don't know what you don't know, and
+2. Using a Mac does sometimes make things harder^[and yet, I will continue to stan and it will always be my preferred OS so plz don't try and change my mind.]
+
+I am used to just installing packages in R and having them just *work*. I honestly did not even pay much attention to the warning I would get when loading `fst`: "OpenMP was not detected, using single threaded mode." It wasn't until someone pointed out that I was only using a single thread that I noticed something was wrong--or performance could've been improved if I had paid a bit more attention.
+
+I am not an expert on why the default mac version of the C-compiler does not support OpenMP. I did however get it to work on my M1 mac so I figured I would document the steps here and share. I am also writing this to my future self to help me through setting this up on future computers.
+
+**Setting Up OpenMP multi threads for data.table and fst()**
+
+1. In terminal, install xcode (if not already installed)
+```{bash}
+#| eval: FALSE
+xcode-select --install
+```
+
+2. In terminal, install homebrew (if not already installed)
+```{bash}
+#| eval: FALSE
+brew
+brew install pkg-config
+```
+
+3. In terminal, using homebrew install openMP library and other dependencies
+```{bash}
+#| eval: FALSE
+brew install llvm libomp gcc
+```
+
+4. In terminal, create a directory  called `.R` and within this directory, create a file called `Makevars`
+```{bash}
+#| eval: FALSE
+mkdir ~/.R
+touch ~/.R/Makevars
+```
+
+5. Edit the Makevars file. Can do this in RStudio by navigating to in the Files pane: Home > .R > Makevars. Open and edit the file as you would an .Reviron file. Type the following in the file and save.
+```{text}
+LDFLAGS += -L/opt/homebrew/opt/libomp/lib -lomp
+CPPFLAGS += -I/opt/homebrew/opt/libomp/include -Xclang -fopenmp
+```
+
+![](screenshot.png)
+
+6. Back in the terminal, load R and install `data.table` from source and then quit. 
+```{bash}
+#| eval: FALSE
+# In terminal
+R
+install.packages("data.table", type = "source")
+
+quit() # quit R
+```
+
+7. Check to make sure `data.table` is using multiple threads in RStudio by restarting R and loading `data.table`
+```{r}
+#| eval: FALSE
+library(data.table)
+getDTthreads() # check # of threads
+```
+
+8. Go to `~/.R/Makefile` and comment out CPPFLAGS line and add additional lines so that makefile looks like this:
+```{text}
+LDFLAGS += -L/opt/homebrew/opt/libomp/lib -lomp
+# CPPFLAGS += -I/opt/homebrew/opt/libomp/include -Xclang -fopenmp
+
+CXX1X=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp # had to brew install gcc
+CXX98=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp
+CXX11=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp
+CXX14=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp
+CXX17=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp
+```
+
+![](screenshot1.png)
+
+9. If step 8 doesn't work, check to make sure the paths are correct for lines 4-8. To do this, you can go in terminal and make sure that the path exists using code below. The output should show 13.1.0.
+```{bash}
+#| eval: FALSE
+cd /opt/homebrew/Cellar/gcc
+ls
+```
+
+10. In the terminal, install fst and fstcore from source:
+```{bash}
+#| eval: FALSE
+R
+install.packages("fstcore", type = "source")
+install.packages("fst", type = "source")
+quit()
+```
+
+11. Go back to RStudio and restart R. Load fst and check threads:
+```{r}
+library(fst)
+threads_fst()
+```
+
+

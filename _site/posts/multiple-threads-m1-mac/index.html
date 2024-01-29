@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-01-27">
+<meta name="author" content="Lauren Ilano">
+<meta name="dcterms.date" content="2024-01-29">
 
-<title>Lauren Ilano - Dual Enrollment for Equitable Completion</title>
+<title>Lauren Ilano - Setting up OpenMP on Apple Silicon Mac</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -119,47 +154,156 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Setting up OpenMP on Apple Silicon Mac</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">mac</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lauren Ilano </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 29, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Dual Enrollment for Equitable Completion</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Projects</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
 
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 27, 2024</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
+<p>This blog post is an example of two things:</p>
+<ol type="1">
+<li>You don’t know what you don’t know, and</li>
+<li>Using a Mac does sometimes make things harder<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ol>
+<p>I am used to just installing packages in R and having them just <em>work</em>. I honestly did not even pay much attention to the warning I would get when loading <code>fst</code>: “OpenMP was not detected, using single threaded mode.” It wasn’t until someone pointed out that I was only using a single thread that I noticed something was wrong–or performance could’ve been improved if I had paid a bit more attention.</p>
+<p>I am not an expert on why the default mac version of the C-compiler does not support OpenMP. I did however get it to work on my M1 mac so I figured I would document the steps here and share. I am also writing this to my future self to help me through setting this up on future computers.</p>
+<p><strong>Setting Up OpenMP multi threads for data.table and fst()</strong></p>
+<ol type="1">
+<li>In terminal, install xcode (if not already installed)</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>In terminal, install homebrew (if not already installed)</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install pkg-config</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>In terminal, using homebrew install openMP library and other dependencies</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install llvm libomp gcc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>In terminal, create a directory called <code>.R</code> and within this directory, create a file called <code>Makevars</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/.R</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> ~/.R/Makevars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li>Edit the Makevars file. Can do this in RStudio by navigating to in the Files pane: Home &gt; .R &gt; Makevars. Open and edit the file as you would an .Reviron file. Type the following in the file and save.</li>
+</ol>
+<div class="cell">
+<pre class="text cell-code"><code>LDFLAGS += -L/opt/homebrew/opt/libomp/lib -lomp
+CPPFLAGS += -I/opt/homebrew/opt/libomp/include -Xclang -fopenmp</code></pre>
+</div>
+<p><img src="screenshot.png" class="quarto-discovered-preview-image img-fluid"></p>
+<ol start="6" type="1">
+<li>Back in the terminal, load R and install <code>data.table</code> from source and then quit.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In terminal</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">"data.table"</span><span class="ex">,</span> type = <span class="st">"source"</span><span class="kw">)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">quit()</span> <span class="co"># quit R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="7" type="1">
+<li>Check to make sure <code>data.table</code> is using multiple threads in RStudio by restarting R and loading <code>data.table</code></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getDTthreads</span>() <span class="co"># check # of threads</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="8" type="1">
+<li>Go to <code>~/.R/Makefile</code> and comment out CPPFLAGS line and add additional lines so that makefile looks like this:</li>
+</ol>
+<div class="cell">
+<pre class="text cell-code"><code>LDFLAGS += -L/opt/homebrew/opt/libomp/lib -lomp
+# CPPFLAGS += -I/opt/homebrew/opt/libomp/include -Xclang -fopenmp
 
-</header>
+CXX1X=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp # had to brew install gcc
+CXX98=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp
+CXX11=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp
+CXX14=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp
+CXX17=/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13 -fopenmp</code></pre>
+</div>
+<p><img src="screenshot1.png" class="img-fluid"></p>
+<ol start="9" type="1">
+<li>If step 8 doesn’t work, check to make sure the paths are correct for lines 4-8. To do this, you can go in terminal and make sure that the path exists using code below. The output should show 13.1.0.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /opt/homebrew/Cellar/gcc</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="10" type="1">
+<li>In the terminal, install fst and fstcore from source:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">"fstcore"</span><span class="ex">,</span> type = <span class="st">"source"</span><span class="kw">)</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">install.packages</span><span class="er">(</span><span class="st">"fst"</span><span class="ex">,</span> type = <span class="st">"source"</span><span class="kw">)</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quit()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="11" type="1">
+<li>Go back to RStudio and restart R. Load fst and check threads:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fst)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">threads_fst</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
 
-<p>Dual Enrollment for Equitable Completion (DE4EC) is a multi-year collaborative initiative among the Bill &amp; Melinda Gates Foundation, College Futures Foundation, and Tipping Point Community, carried out with research support provided by <a href="https://www.r-d-p-consulting.com/">RDP Consulting</a>. DE4EC works with 10 CCCs and HS parners to advance equitable dual enrollment.</p>
-<p>The quantitative report and accompanying briefs use data from <a href="https://www.calpassplus.org/Home">CalPASS Plus</a> to identify baseline dual enrollment offerings, disaggregated dual enrollment participation rates, high school outcomes, and college access metrics for the 10 partnerships supported by DE4EC.</p>
-<p><a href="https://www.r-d-p-consulting.com/_files/ugd/348955_a171e931e318421ebd34aff78c478ea8.pdf">See the full report here</a></p>
-<p><img src="de4ec-report-cover.png" class="quarto-discovered-preview-image img-fluid"></p>
 
 
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>and yet, I will continue to stan and it will always be my preferred OS so plz don’t try and change my mind.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

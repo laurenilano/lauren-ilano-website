@@ -2,14 +2,15 @@
   {
     "listing": "/projects.html",
     "items": [
-      "/projects folder/DE4EC/index.html",
       "/projects folder/Texas HEERF/index.html",
+      "/projects folder/DE4EC/index.html",
       "/projects folder/Faculty Diversity/index.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
+      "/posts/multiple-threads-m1-mac/index.html",
       "/posts/rstudio-server-on-vultr/index.html",
       "/posts/tableau-color-palette/index.html",
       "/posts/duck-db-paste/index.html",
@@ -24,6 +25,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/multiple-threads-m1-mac/index.html",
       "/posts/rstudio-server-on-vultr/index.html",
       "/posts/tableau-color-palette/index.html",
       "/posts/duck-db-paste/index.html",
