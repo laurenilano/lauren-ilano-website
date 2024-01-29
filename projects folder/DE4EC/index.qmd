@@ -1,6 +1,6 @@
 ---
 title: 'Dual Enrollment for Equitable Completion'
-date: '2024-01-28'
+date: '2024-01-27'
 categories: ['Projects']
 description: ''
 image: de4ec-report-cover.png
