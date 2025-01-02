@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lauren Ilano">
+<meta name="dcterms.date" content="2025-01-01">
 
-<title>Lauren Ilano</title>
+<title>Lauren Ilano - Code Snippets in RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -59,50 +60,19 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-posts'] = new List('listing-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Lauren Ilano</span>
     </a>
   </div>
@@ -113,23 +83,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html" rel="" target="">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html" rel="" target="">
+    <a class="nav-link" href="../../resources.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html" rel="" target="">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Ilano 2024 CV.pdf" rel="" target="">
+    <a class="nav-link" href="../../Ilano 2024 CV.pdf" rel="" target="">
  <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item compact">
@@ -150,131 +120,73 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    
-<!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.jpeg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Lauren Ilano</h1>
-</div>
-<div class="quarto-title-meta">
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Code Snippets in RStudio</h1>
+            <p class="subtitle lead">Easily standardize front matter in R scripts</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">r-setup</div>
+              </div>
+                  </div>
   </div>
-</header><main class="content" id="quarto-document-content">
-<section id="howdy" class="level1">
-<h1>Howdy!</h1>
-<p>I am a higher education researcher by day (but preferably night) and a lifelong student. I love to read, hate to write, but enjoy torturing myself so here is a blog! I’m about 20 years late to the party which pretty much tells you everything you need to know about me. Oh, and I love cats because of course I do.</p>
-<section id="recent-blog-posts" class="level2">
-<h2 data-anchor-id="recent-blog-posts">Recent blog posts</h2>
-<p><a href="./blog.html"> <button type="button" class="btn btn-primary float-end btn-sm">See all</button></a></p>
-<p><br></p>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Lauren Ilano </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 1, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</section>
-</section>
-<div class="quarto-listing quarto-listing-container-grid" id="listing-posts">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="r-setup" data-listing-date-sort="1735718400000" data-listing-file-modified-sort="1735804255719" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<a href="./posts/r-snippets/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/r-snippets/scissors.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Code Snippets in RStudio
-</h5>
-<div class="card-text listing-description">
-Happy New Year! In 2025, one of my goals is to learn how to do the small things more efficiently. To accomplish this, I want to begin using more code snippets (and…<sup></sup>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Lauren Ilano
-</div>
-<div class="listing-date">
-Jan 1, 2025
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="mac" data-listing-date-sort="1706515200000" data-listing-file-modified-sort="1706512508036" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<a href="./posts/multiple-threads-m1-mac/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/multiple-threads-m1-mac/scout-comp.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Setting up OpenMP on Apple Silicon Mac
-</h5>
-<div class="card-text listing-description">
-This blog post is an example of two things:
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Lauren Ilano
-</div>
-<div class="listing-date">
-Jan 29, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="rstudio" data-listing-date-sort="1686898800000" data-listing-file-modified-sort="1687036428981" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
-<a href="./posts/rstudio-server-on-vultr/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/rstudio-server-on-vultr/cookie-monster.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Setting Up an R Studio Server on the Cloud Using Vultr
-</h5>
-<div class="card-text listing-description">
-I am a happy R user but I do acknowledge that R isn’t the best data management tool because of how memory-intensive it is. I’ve been working on some projects recently that…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Lauren Ilano
-</div>
-<div class="listing-date">
-Jun 16, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://www.linkedin.com/in/lauren-ilano-53207182/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/laurenilano" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://www.goodreads.com/user/show/68223454-lauren-m-ilano" class="about-link" rel="" target="">
-    <i class="bi bi-book"></i>
-     <span class="about-link-text">Goodreads</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+
+<p>Happy New Year! In 2025, one of my goals is to learn how to do the small things more efficiently. To accomplish this, I want to begin using more code snippets (and shortcuts) in RStudio to avoid repetitive script set-up. When I was at a previous job, one of my coworkers always had very consistent scripts with header info, a standard set of packages, default options set, and even the hexcodes for our brand colors to use in ggplot. He was a wizard and didn’t use RStudio and I honestly just figured it was some emacs magic that was inaccessible to me so I didn’t really dig any further. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In this blog, I’ll go over how I set up and use my code snippet that contains the information I’d like to have at the beginning of all my R scripts. Code snippets are essentially macros that allow you to type out a keyword that corresponds to a larger chunk of code, thereby saving you keystrokes. They can get quite complicated, but my use-case is quite simple.</p>
+<p>The code snippet functionality is already built into R Studio and to see what code snippets are already available, just go to Tools &gt; Edit Code Snippets… and you should see the following:</p>
+<p><img src="snippet1.png" class="quarto-discovered-preview-image img-fluid"> Lines 2 and 3 show the code needed to create a code snippet that allow you to save a few keys when installing a package. If you go to an R script and type “lib” and then TAB, you should see the text autocomplete “library().”</p>
+<p>We can easily add our own snippets by typing <code>snippet</code> and our keyword along with the code we would like to insert on the following lines. Make sure that the code you’d like to insert after typing the keyword is indented. My header code is included in the screenshot below:</p>
+<p><img src="snippet2.png" class="img-fluid"> For my header, I wanted to include the file name<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, a placeholder where I can write a description of the file, and basic information like my name, when the file was created, and a space for notes. I also added in common libraries I use. As noted above, you can also set default options or commonly used parameters. Now, when I open up a new R Script, I can just type “myinit” and hit tab and all of this information will populate.</p>
+<p><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExemI5dGhoODc4eG9pMjJiYXpzaHVyMHo0MGZ6OGxqaGVianNmNzg4cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ulNfzMtZ2GlrySfME6/giphy.gif" class="img-fluid"></p>
+<p>I will probably tinker around with this a bit more, but for now, I’m just happy at how easy it was to save 10 seconds :P</p>
+<p><img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHhjcDM0aWtsenMxMWRybHBra2JoZDk0ajk4Z3cyYnMxczZ6YWRkbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/H1THXNSQOooS7Ytw1E/giphy.gif" class="img-fluid"></p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Ok, fine I did pry further and fell into a huge emacs/ESS hole and became overwhelmed and gave up several times! Luckily, I came across code snippets in RStudio during one of my despair spirals.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Note that you need to save the R script in order for this to work. More information on getting the current path of a file is available here: https://stackoverflow.com/questions/47044068/get-the-path-of-current-script<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -295,6 +207,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

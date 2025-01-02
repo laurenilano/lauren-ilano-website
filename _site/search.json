@@ -137,7 +137,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSetting up OpenMP on Apple Silicon Mac\n\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\n\n\n\n\n  \n\n\n\n\nSetting Up an R Studio Server on the Cloud Using Vultr\n\n\nWhen you just can’t get enough RAM\n\n\n\n\n\n\nJun 16, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nCode Snippets in RStudio\n\n\nEasily standardize front matter in R scripts\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\n  \n\n\n\n\nSetting up OpenMP on Apple Silicon Mac\n\n\n\n\n\n\n\n\n\nJan 29, 2024\n\n\n\n\n\n\n  \n\n\n\n\nSetting Up an R Studio Server on the Cloud Using Vultr\n\n\nWhen you just can’t get enough RAM\n\n\n\n\n\n\nJun 16, 2023\n\n\n\n\n\n\n  \n\n\n\n\nAdding Color Palettes to Tableau\n\n\n\n\n\n\n\n\n\nMar 31, 2023\n\n\n\n\n\n\n  \n\n\n\n\nQuirks when pasting in duckdb\n\n\nWhere the duck did the NAs go?!?!\n\n\n\n\n\n\nMar 24, 2023\n\n\n\n\n\n\n  \n\n\n\n\nSaving API Keys to an .Renviron file\n\n\nWhatever you do, don’t hardcode secret keys…\n\n\n\n\n\n\nMar 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nHello, world!\n\n\n\n\n\n\n\n\n\nFeb 3, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/tableau-color-palette/index.html#footnotes",
@@ -187,5 +187,19 @@
     "title": "Setting up OpenMP on Apple Silicon Mac",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nand yet, I will continue to stan and it will always be my preferred OS so plz don’t try and change my mind.↩︎"
+  },
+  {
+    "objectID": "posts/r-snippets/index.html",
+    "href": "posts/r-snippets/index.html",
+    "title": "Code Snippets in RStudio",
+    "section": "",
+    "text": "Happy New Year! In 2025, one of my goals is to learn how to do the small things more efficiently. To accomplish this, I want to begin using more code snippets (and shortcuts) in RStudio to avoid repetitive script set-up. When I was at a previous job, one of my coworkers always had very consistent scripts with header info, a standard set of packages, default options set, and even the hexcodes for our brand colors to use in ggplot. He was a wizard and didn’t use RStudio and I honestly just figured it was some emacs magic that was inaccessible to me so I didn’t really dig any further. 1\nIn this blog, I’ll go over how I set up and use my code snippet that contains the information I’d like to have at the beginning of all my R scripts. Code snippets are essentially macros that allow you to type out a keyword that corresponds to a larger chunk of code, thereby saving you keystrokes. They can get quite complicated, but my use-case is quite simple.\nThe code snippet functionality is already built into R Studio and to see what code snippets are already available, just go to Tools &gt; Edit Code Snippets… and you should see the following:\nLines 2 and 3 show the code needed to create a code snippet that allow you to save a few keys when installing a package. If you go to an R script and type “lib” and then TAB, you should see the text autocomplete “library().”\nWe can easily add our own snippets by typing snippet and our keyword along with the code we would like to insert on the following lines. Make sure that the code you’d like to insert after typing the keyword is indented. My header code is included in the screenshot below:\nFor my header, I wanted to include the file name2, a placeholder where I can write a description of the file, and basic information like my name, when the file was created, and a space for notes. I also added in common libraries I use. As noted above, you can also set default options or commonly used parameters. Now, when I open up a new R Script, I can just type “myinit” and hit tab and all of this information will populate.\nI will probably tinker around with this a bit more, but for now, I’m just happy at how easy it was to save 10 seconds :P"
+  },
+  {
+    "objectID": "posts/r-snippets/index.html#footnotes",
+    "href": "posts/r-snippets/index.html#footnotes",
+    "title": "Code Snippets in RStudio",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOk, fine I did pry further and fell into a huge emacs/ESS hole and became overwhelmed and gave up several times! Luckily, I came across code snippets in RStudio during one of my despair spirals.↩︎\nNote that you need to save the R script in order for this to work. More information on getting the current path of a file is available here: https://stackoverflow.com/questions/47044068/get-the-path-of-current-script↩︎"
   }
 ]
