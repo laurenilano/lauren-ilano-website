@@ -20,11 +20,13 @@ In this blog, I'll go over how I set up and use my code snippet that contains th
 The code snippet functionality is already built into R Studio and to see what code snippets are already available, just go to Tools > Edit Code Snippets... and you should see the following: 
 
 ![](snippet1.png)
+
 Lines 2 and 3 show the code needed to create a code snippet that allow you to save a few keys when installing a package. If you go to an R script and type "lib" and then TAB, you should see the text autocomplete "library()." 
 
 We can easily add our own snippets by typing `snippet` and our keyword along with the code we would like to insert on the following lines. Make sure that the code you'd like to insert after typing the keyword is indented. My header code is included in the screenshot below:
 
 ![](snippet2.png)
+
 For my header, I wanted to include the file name^[Note that you need to save the R script in order for this to work. More information on getting the current path of a file is available here: https://stackoverflow.com/questions/47044068/get-the-path-of-current-script], a placeholder where I can write a description of the file, and basic information like my name, when the file was created, and a space for notes. I also added in common libraries I use. As noted above, you can also set default options or commonly used parameters. Now, when I open up a new R Script, I can just type "myinit" and hit tab and all of this information will populate. 
 
 ![](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExemI5dGhoODc4eG9pMjJiYXpzaHVyMHo0MGZ6OGxqaGVianNmNzg4cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ulNfzMtZ2GlrySfME6/giphy.gif)
